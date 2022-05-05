@@ -6,10 +6,11 @@ package com.mycompany.foolthief;
 
 public class Node {
     
- public Node nextNode;
+      public Node nextNode;
       public Node previousNode;
       Stolen stolen;
       String  dataQueue;
+      int a;
 
     public String getDataQueue(Stolen stolen) {
         return dataQueue;

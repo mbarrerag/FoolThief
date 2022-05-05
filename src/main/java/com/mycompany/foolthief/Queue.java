@@ -8,6 +8,7 @@ package com.mycompany.foolthief;
 public class Queue {
     private Node begQueue,endQueue;
     String infQueue = "";
+    int asdadas;
     
 
  
@@ -18,9 +19,12 @@ public class Queue {
         endQueue= null;
         
     }
-    public void enQueue(int dataQueue){
+    public void enQueue(String dataQueue){
         Node nodeNew = new Node();
-        nodeNew.dataQueue= nodeNew;
+        nodeNew.dataQueue=nodeNew;
+        nodeNew.dataQueue=null;
+        
+     
        
          
         
