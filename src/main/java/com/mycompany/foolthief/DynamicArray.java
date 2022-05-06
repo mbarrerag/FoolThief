@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Stepe
  */
 public class DynamicArray {
- String arrayList[];
+    String arrayList[];
     int sizeofarray=0;
     private int count;
   
@@ -30,7 +30,7 @@ public class DynamicArray {
      public void growSize(){  //Metodo para hacer crecer el arreglo 
          String temp[]=null;
          if(count == sizeofarray){ //Si el arreglo se encuentra llego creamos un arreglo con el doble de la capacidad
-             temp = new String[sizeofarray*2];
+             temp = new String[sizeofarray * 2];
              {
                  for(int i=0; i<sizeofarray;i++){
                      temp[i]=arrayList[i]; //Copiamos los elementos del viejo array

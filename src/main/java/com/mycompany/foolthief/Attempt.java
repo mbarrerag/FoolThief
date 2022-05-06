@@ -9,7 +9,9 @@ package com.mycompany.foolthief;
  * @author Stepe
  */
 public class Attempt {
-
+    private char numNeighborhood;
+    private int numRobberies;
+    
     public char getNumNeighborhood() {
         return numNeighborhood;
     }
@@ -25,8 +27,4 @@ public class Attempt {
     public void setNumRobberies(int numRobberies) {
         this.numRobberies = numRobberies;
     }
-    private char numNeighborhood;
-    private int numRobberies;
-    
-    
 }
