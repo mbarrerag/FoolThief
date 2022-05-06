@@ -6,51 +6,46 @@ package com.mycompany.foolthief;
 
 
 public class LinkedList {
-     private Node head;
-   private Node tail;
-   private int length;
-   
-  
+    private Node head;
+    private Node tail;
+    private int length;
 
-   public void add(Stolen stolen){
+    LinkedList() {
+        head = null;
+        tail = null;
+        length = 0;
+    }
 
-       
-}
-   
-   public void add(Stolen stolen,int index ){
+    public int size(){
+        return 0;
+    }
     
-  }
-   
-  public void addFist (Stolen stolen){
-    
-      
-      
-} 
-
-public void removeFistdsadsadsa(){
-    
-    
-  
-}        
-  
-public void removeFist(){
-    
-    
-  
-}
-public void remove(int index){
-    
-    
-}
-public void removeLast(){
-
-}
-public int size(){
-    return 0;
-  }
-public boolean itsEmpty(){
-   
+    public boolean itsEmpty(){
         return true;
     }
 
+    public void addFirst (Stolen stolen){
+        
+    }
+    
+    public void add(Stolen stolen){
+        // Node node = new Node(stolen);
+    }
+   
+    public void add(Stolen stolen, int index ){
+        
+    }
+
+    public void removeFirst(){
+            
+    }
+
+    public void remove(){
+        
+    }
+
+    public void remove(int index){
+        
+    }
 }
+
