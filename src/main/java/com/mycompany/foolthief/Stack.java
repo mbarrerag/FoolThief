@@ -26,10 +26,8 @@ public class Stack extends List {
         return (String) head.getData();
     }
     public void makeEmptystack(){
-        if (head !=null){
-            Node fist = head;
-            head == null;
+        
             
         }
     }
-}
+
