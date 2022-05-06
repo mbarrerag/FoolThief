@@ -9,6 +9,8 @@ package com.mycompany.foolthief;
 public class FoolThief {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Stolen stolen = new Stolen("111");
+        Node<Stolen> obj1 = new Node<Stolen>(stolen);
+        System.out.println(obj1.getData().getId());
     }
 }

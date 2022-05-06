@@ -17,7 +17,7 @@ public class Queue {
     }
 
     public void makeEmpty(){
-                
+        
     }
 
     public boolean isEmpty(){

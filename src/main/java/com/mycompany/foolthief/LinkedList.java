@@ -6,7 +6,7 @@ package com.mycompany.foolthief;
 
 
 public class LinkedList {
-    private Node head;
+    private Node<Stolen> head;
     private Node tail;
     private int length;
 
