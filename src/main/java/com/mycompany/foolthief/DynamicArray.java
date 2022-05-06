@@ -49,11 +49,23 @@ public class DynamicArray {
              
        arrayList[i+1]=arrayList[i];
          }
+         arrayList[index]= infDynamic;
+         count++;
          //
        
                      
                      
                  }
+     public String showElements(){
+          String resoult = "";
+          for (int i = 0; i < sizeofarray; i++){   
+   
+ resoult += (arrayList[i] + " ");   
+
+}
+          System.out.println(resoult);
+          return resoult;    
+      }
              }
          
          
