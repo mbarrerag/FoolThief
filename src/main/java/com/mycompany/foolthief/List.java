@@ -4,6 +4,7 @@ package com.mycompany.foolthief;
 public class List {
     protected Node head;
     protected int length;
+    protected Node tail;
     
     List() {
         head = null;
