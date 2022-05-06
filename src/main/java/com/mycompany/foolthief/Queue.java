@@ -4,24 +4,23 @@ import javax.swing.JOptionPane;
 
 
 public class Queue extends List  {
-    private Node begQueue;
-    private Node endQueue;
+ 
     String infQueue = "";
   
     
     public Queue (){
         super();
-        begQueue= null;
-        endQueue= null;
+        head= null;
+        tail= null;
     }
 
     public void showInformation(){
-          Node journey=head;
+          Node journeyStack=head;
           String inverstQueue="";
          
-          while (journey!=null ){
-          infQueue += journey.getData()+ "\n";
-          journey.getNext();
+          while (journeyStack!=null ){
+          infQueue += journeyStack.getData()+ "\n";
+          journeyStack.getNext();
               
           }
           String chain[]=infQueue.split("\n ");
@@ -35,8 +34,8 @@ public class Queue extends List  {
 
     public void makeEmpty(){
     if (!isEmpty()){
-       Node fist = head;
-       String InverstQueue;
+       head=null;
+       tail=null;
        
       
       
@@ -46,7 +45,7 @@ public class Queue extends List  {
     }
 
     public boolean isEmpty(){
-    if (begQueue==null){
+    if (head==null){
         return true;
     }    else {
         return false;
@@ -70,4 +69,4 @@ public class Queue extends List  {
     }
  
     
-}
+}//Como mandar un objeto 
