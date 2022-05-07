@@ -1,7 +1,7 @@
 package com.mycompany.foolthief;
 
 
-public class List {
+public abstract class List {
     protected Node head;
     protected Node tail;
     protected int length;

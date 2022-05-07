@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.foolthief;
 
-import java.util.ArrayList;
 
-/**
- *
- * @author Stepe
- */
 public class DynamicArray {
     String arrayList[];
     int sizeOfArray = 0 ;
@@ -29,7 +20,7 @@ public class DynamicArray {
         count++;
     }
      
-    public void growSize() {  //Metodo para hacer crecer el arreglo 
+    public void growSize() { //Metodo para hacer crecer el arreglo 
         String temp[] = null;
         if (count == sizeOfArray) { //Si el arreglo se encuentra llego creamos un arreglo con el doble de la capacidad
          temp = new String[sizeOfArray * 2];

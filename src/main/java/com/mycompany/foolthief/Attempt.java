@@ -55,10 +55,5 @@ public class Attempt {
 
     public void setModusOperandi(String modusOperandi) {
         this.modusOperandi = modusOperandi;
-    }
-  
-    
-    
-    
-    
+    }    
 }
