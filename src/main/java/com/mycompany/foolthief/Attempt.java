@@ -11,7 +11,7 @@ package com.mycompany.foolthief;
 public class Attempt {
     private String id;
     private String neighborhood;
-    private String obcjet;
+    private String object;
     private String date;
     private String hour;
     private String modusOperandi;
@@ -33,11 +33,11 @@ public class Attempt {
     }
 
     public String getObcjet() {
-        return obcjet;
+        return object;
     }
 
     public void setObcjet(String obcjet) {
-        this.obcjet = obcjet;
+        this.object = obcjet;
     }
 
     public String getDate() {
