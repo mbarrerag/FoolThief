@@ -14,7 +14,7 @@ public class DynamicArray {
      
     public void addElement(String infDynamic) {
         if (count == sizeOfArray) {
-         growSize();      
+            growSize();      
         }
         arrayList[count] = infDynamic;
         count++;
@@ -23,10 +23,10 @@ public class DynamicArray {
     public void growSize() { //Metodo para hacer crecer el arreglo 
         String temp[] = null;
         if (count == sizeOfArray) { //Si el arreglo se encuentra llego creamos un arreglo con el doble de la capacidad
-         temp = new String[sizeOfArray * 2];
+            temp = new String[sizeOfArray * 2];
         }
         for (int i = 0; i<sizeOfArray;i++) {
-         temp[i] = arrayList[i]; //Copiamos los elementos del viejo array
+            temp[i] = arrayList[i]; //Copiamos los elementos del viejo array
         }
         arrayList = temp;
         sizeOfArray = sizeOfArray*2; //Se pasan los datos que fueron copiados al arreglo y se actualiza la capacidad del mismo 
@@ -37,10 +37,10 @@ public class DynamicArray {
          growSize();
         }
         for (int i = count-1;i>index;i--) {
-         arrayList[i+1] = arrayList[i];
-         }
-         arrayList[index] = infDynamic;
-         count++;
+            arrayList[i+1] = arrayList[i];
+        }
+        arrayList[index] = infDynamic;
+        count++;
     }
      
     public String showElements() {
