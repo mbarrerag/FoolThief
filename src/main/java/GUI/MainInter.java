@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
 
 import javax.swing.JFrame;
@@ -14,13 +15,18 @@ import javax.swing.SwingConstants;
 import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 import java.awt.Dialog.ModalExclusionType;
+import java.awt.Dimension;
+
 import javax.swing.border.LineBorder;
 
 
 import javax.swing.UIManager;
 import java.awt.Toolkit;
 import javax.swing.JScrollPane;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
@@ -58,21 +64,28 @@ public class MainInter {
 
 	/**
 	 * Create the application.
+	 * @throws IOException 
 	 */
-	public MainInter() {
+	public MainInter() throws IOException {
 		initialize();
 		
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws IOException 
 	 */
-	private void initialize() {
+	private void initialize() throws IOException {
+		Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+		URL url = new URL("https://github.com/MillerBarrera/FoolThief/blob/master/IMG/edit.png?raw=true");
+		Image image = ImageIO.read(url);
+		URL url2 = new URL("https://github.com/MillerBarrera/FoolThief/blob/master/IMG/WhatsApp%20Image%202022-05-04%20at%2012.56.47%20AM.jpeg?raw=true");
+		Image image2 = ImageIO.read(url2);
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setTitle("FoolThief");
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ingri\\Downloads\\WhatsApp Image 2022-05-04 at 12.56.47 AM.jpeg"));
-		frame.setBounds(250, 150, 1272, 729);
+		frame.setIconImage(image2);
+		frame.setBounds(size.width/7, size.height/7, 1272, 729);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.decode("#02aed9"));
@@ -84,7 +97,7 @@ public class MainInter {
 		icon.setBackground(Color.decode("#ffffff"));
 		/*icon.setEnabled(false);
 		icon.setDisabledIcon(new ImageIcon("C:\\Users\\ingri\\Downloads\\WhatsApp Image 2022-05-04 at 12.56.47 AM.jpeg"));*/
-		icon.setIcon(new ImageIcon("C:\\Users\\ingri\\Downloads\\edit.png"));
+		icon.setIcon(new ImageIcon(image));
 		icon.setHorizontalAlignment(SwingConstants.CENTER);
 		icon.setVerticalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(icon);
@@ -133,9 +146,7 @@ public class MainInter {
 		modify.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-                            frame.setEnabled(false);
-                            InsertWin.main(null);
-                        	
+			
 			}
 		});
 		  //view More
