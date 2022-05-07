@@ -2,6 +2,10 @@ package com.mycompany.foolthief;
 
 
 public class LinkedList {
+    /**
+     * Reportes de robo - Lista Doblemente Enlazada
+     * Lista que guarda instancias de la clase Stolen (reporte de robo).
+     */
     private Node<Stolen> head;
     private Node<Stolen> tail;
     private int length;
@@ -11,11 +15,22 @@ public class LinkedList {
         tail = null;
         length = 0;
     }
-
+    /**
+     * Retorna el número de elementos contenidos en la lista.
+     * @return int: tamaño de la lista
+     */
     public int size(){
         return length;
     }
     
+    /**
+     * Verifica si la lista no tiene elementos.
+     * @return boolean:
+     *      <ul>
+     *          <li>true: la lista esta vacia</li>
+     *          <li>false: la lista no esta vacia</li>
+     *      </ul>
+     */
     public boolean itsEmpty(){
         return (head == null) && (tail == null);
     }
@@ -32,6 +47,10 @@ public class LinkedList {
         }
     }
     
+    /**
+     * Agrega un elemento al final de la lista por defecto.
+     * @param stolen: Instancia de tipo Stolen.
+     */
     public void add(Stolen stolen){
         Node<Stolen> node = new Node<Stolen>(stolen);
         if (head == null) {
@@ -44,7 +63,13 @@ public class LinkedList {
         }
         length++;
     }
-   
+    
+    /**
+     * Recarga del método add(Stolen stolen), ahora recibe un indice
+     * y lo inserta en este.Recorre la lista hasta anterior al índice e inserta adelante.
+     * @param stolen: Instancia de tipo Stolen.
+     * @param index: Índice donde insertará.
+     */
     public void add(Stolen stolen, int index ){
         if (index == length) {
             add(stolen);
@@ -70,6 +95,10 @@ public class LinkedList {
         }
     }
     
+    /**
+     * Retorna el objeto Stolen que se encuentra contenido en el primer nodo.
+     * @return objeto Stolen
+     */
     public Stolen getFirst() {
         if (head != null) {
             return head.getData();
@@ -78,6 +107,11 @@ public class LinkedList {
         }
     }
     
+    /**
+     * Retorna el objeto Stolen que se encuentra contenido en el i-ésimo nodo.
+     * @param index
+     * @return objeto Stolen
+     */
     public Stolen get(int index) {
         if (index == length) {
             getLast();
@@ -97,6 +131,10 @@ public class LinkedList {
         return null;
     }
     
+    /**
+     * Retorna el objeto Stolen que se encuentra contenido en el último nodo.
+     * @return Objeto Stolen
+     */
     public Stolen getLast() {
         if (tail != null) {
             return tail.getData();
@@ -104,7 +142,14 @@ public class LinkedList {
             return null;
         }
     }
-
+    
+    public Stolen browseById(String id) {
+        
+    }
+    
+    /**
+     * Elimina el primer elemento de la lista.
+     */
     public void removeFirst(){
         if (head != null) {
             Node<Stolen> first = head;
@@ -114,9 +159,13 @@ public class LinkedList {
             length--;
         }
     }
-
+    
+    /**
+     * Elimina el elemento alojado en el i-ésimo nodo de la lista.
+     * @param index: Indice del elemento que se borrará.
+     */
     public void remove(int index){
-        if (head != null) {
+        if (head != null) { 
             if (index == 0) {
                 removeFirst();
             } else if (index == length - 1) {
@@ -136,7 +185,10 @@ public class LinkedList {
             }
         }
     }
-
+    
+    /**
+     * Eliminá el último elemento contenido en la lista.
+     */
     public void removeLast(){
         if (head != null) {
             Node<Stolen> last = tail;
@@ -146,6 +198,7 @@ public class LinkedList {
         }
     }
     
+    // A continuación métodos para pruebas (impresion en consola)
     public void displayElements() {
         if (head == null) {
             System.out.println("No Elements");
