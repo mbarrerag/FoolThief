@@ -1,5 +1,7 @@
 package com.mycompany.foolthief;
 
+import javax.swing.JOptionPane;
+
 
 public class Stack extends List {
     Stack() {
@@ -31,6 +33,29 @@ public class Stack extends List {
             head=null;
             
         }
-    }
+    }    
+     /*
+        public void MostrarValores(){
+        Nodo recorrido = UltimoValorIngresado;
+        
+        while(recorrido != null){
+            Lista += recorrido.informacion + "\n";
+            recorrido = recorrido.siguiente;
+        }
+        JOptionPane.showMessageDialog(null, Lista);
+        Lista = "";
+    }*/
+     
+    public void showInformationStack(){
+        Node journeyStack = head;
+        String inverstQueue = "";
+        while(journeyStack != null){
+         inverstQueue +=  journeyStack.getData() + "\n";
+         journeyStack=journeyStack.getNext();
+        }
+        JOptionPane.showMessageDialog(null, inverstQueue);
+        inverstQueue = "";
+    }     
+    
 }
 

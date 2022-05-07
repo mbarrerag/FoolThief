@@ -9,22 +9,63 @@ package com.mycompany.foolthief;
  * @author Stepe
  */
 public class Attempt {
-    private char numNeighborhood;
-    private int numRobberies;
+    private String id;
+    private String neighborhood;
+    private String obcjet;
+    private String date;
+    private String hour;
+    private String modusOperandi;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPlace() {
+        return neighborhood;
+    }
+
+    public void setPlace(String place) {
+        this.neighborhood = place;
+    }
+
+    public String getObcjet() {
+        return obcjet;
+    }
+
+    public void setObcjet(String obcjet) {
+        this.obcjet = obcjet;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getHour() {
+        return hour;
+    }
+
+    public void setHour(String hour) {
+        this.hour = hour;
+    }
+
+    public String getModusOperandi() {
+        return modusOperandi;
+    }
+
+    public void setModusOperandi(String modusOperandi) {
+        this.modusOperandi = modusOperandi;
+    }
+  
     
-    public char getNumNeighborhood() {
-        return numNeighborhood;
-    }
-
-    public void setNumNeighborhood(char numNeighborhood) {
-        this.numNeighborhood = numNeighborhood;
-    }
-
-    public int getNumRobberies() {
-        return numRobberies;
-    }
-
-    public void setNumRobberies(int numRobberies) {
-        this.numRobberies = numRobberies;
-    }
+    
+    
+    
 }
