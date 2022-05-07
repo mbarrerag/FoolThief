@@ -112,19 +112,21 @@ public class LinkedList {
      * @return objeto Stolen
      */
     public Stolen get(int index) {
-        if (index == length) {
-            getLast();
-        } else if (index >= 0 && index <= (length - 1)) {
-            Node<Stolen> pointer = head;
-            int counter = 0;
-            while ((counter < index) && (pointer.getNext() != null)) {
-                pointer = pointer.getNext();
-                counter++;
-            }
-            if (counter == index) {
-                return pointer.getData();
-            } else {
-                return null;
+        if (head != null) {
+            if (index == length) {
+                getLast();
+            } else if (index >= 0 && index <= (length - 1)) {
+                Node<Stolen> pointer = head;
+                int counter = 0;
+                while ((counter < index) && (pointer.getNext() != null)) {
+                    pointer = pointer.getNext();
+                    counter++;
+                }
+                if (counter == index) {
+                    return pointer.getData();
+                } else {
+                    return null;
+                }
             }
         }
         return null;
@@ -141,9 +143,24 @@ public class LinkedList {
             return null;
         }
     }
-    
+
     public Stolen browseById(String id) {
-        
+        if (head != null) {
+            Node<Stolen> pointer = tail;
+            boolean flag = true;
+            while (flag == true) {
+                if ((flag == false) || (pointer != null)) {
+                    Stolen objectNode = pointer.getData();
+                    String idObject = objectNode.getId();
+                    if (id != idObject) {
+                        pointer = pointer.getPrev();
+                    } else {
+                        return objectNode;
+                    }
+                }
+            }
+        }
+        return null;
     }
     
     /**

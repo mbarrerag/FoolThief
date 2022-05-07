@@ -13,7 +13,7 @@ public class Stolen {
     private String description;
     private String modusOperandi;
     
-    Stolen (String id) {
+    public Stolen (String id) {
         this.id = id;
     }
     

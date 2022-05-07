@@ -12,7 +12,17 @@ public class FoolThief {
         list.add(new Stolen("104"));
         list.add(new Stolen("105"));
         list.add(new Stolen("765"), 6);
-        System.out.println("====================");
         list.displayIdElements();
+        System.out.println("====================");
+        
+        Stolen obj = list.browseById("765");
+        obj.setName("Elba");
+        obj.setLastname("Lazo");
+        System.out.println("Encontrado");
+        System.out.println("====================");
+        list.displayElements();
+        
+        
+        
     }
 }
