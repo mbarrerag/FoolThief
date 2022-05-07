@@ -32,11 +32,11 @@ public class DynamicArray {
         sizeOfArray = sizeOfArray*2; //Se pasan los datos que fueron copiados al arreglo y se actualiza la capacidad del mismo 
     }
      
-    public void addElementAt(int index, String infDynamic) { //Clase la cual puede eliminar un elemntos en cualquier index
+    public void addElementAt(String infDynamic, int index) { //Clase la cual puede eliminar un elemntos en cualquier index
         if (count == sizeOfArray){
-         growSize();
+            growSize();
         }
-        for (int i = count-1;i>index;i--) {
+        for (int i=count-1; i>index; i--) {
             arrayList[i+1] = arrayList[i];
         }
         arrayList[index] = infDynamic;
