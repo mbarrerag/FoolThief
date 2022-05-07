@@ -224,7 +224,7 @@ public class LinkedList {
                 Stolen actualData = pointer.getData();
                 String id = actualData.getId();
                 String name = actualData.getName();
-                String lastname = actualData.getLastname();
+         
                 String date = actualData.getDate();
                 String hour = actualData.getHour();
                 String object = actualData.getObject();
@@ -232,32 +232,8 @@ public class LinkedList {
                 String neighborhood = actualData.getNeighborhood();
                 String description = actualData.getDescription();
                 String modusOperandi = actualData.getModusOperandi();
-                System.out.println("ID: " + id);
-                System.out.println("name: " + name);
-                System.out.println("lastname: " + lastname);
-                System.out.println("date: " + date);
-                System.out.println("hour: " + hour);
-                System.out.println("object: " + object);
-                System.out.println("place: " + place);
-                System.out.println("neighborhood: " + neighborhood);
-                System.out.println("description: " + description);
-                System.out.println("modus operandi: " + modusOperandi);
-                System.out.println("");
+          
                 pointer = pointer.getPrev();
-            }
-        }
-    }
-    
-    public void displayIdElements() {
-        if (head == null) {
-            System.out.println("No Elements");
-        } else {
-            Node<Stolen> pointer = head;
-            while (pointer != null) {
-                Stolen actualData = pointer.getData();
-                String id = actualData.getId();
-                System.out.println(id);
-                pointer = pointer.getNext();
             }
         }
     }

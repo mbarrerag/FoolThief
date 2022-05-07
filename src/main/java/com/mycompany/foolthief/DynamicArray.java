@@ -2,6 +2,7 @@ package com.mycompany.foolthief;
 
 
 public class DynamicArray {
+   
     String arrayList[];
     int sizeOfArray = 0 ;
     private int count;
@@ -50,6 +51,7 @@ public class DynamicArray {
         }
         return result;
     }
+    
 }
          
          
