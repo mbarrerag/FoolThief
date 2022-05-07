@@ -17,8 +17,8 @@ public class Stack extends List {
         }
     }
     
-    public void push(String data) {
-        Node<String> node = new Node<String>(data);
+    public void push(Attempt attempt) {
+        Node<Attempt> node = new Node<Attempt>(attempt);
         node.setNext(head);
         head = node;
         length++;

@@ -1,5 +1,6 @@
 package GUI;
 
+import com.mycompany.foolthief.Stolen;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -198,7 +199,9 @@ public class InsertWin {
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+			Stolen a = new Stolen("45");
+                        a.setName(fullName.getText());
+                        title.setText(a.getName());
 			}
 		});
 		
