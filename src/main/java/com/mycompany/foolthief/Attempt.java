@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.foolthief;
 
-/**
- *
- * @author Stepe
- */
+
 public class Attempt {
     private String id;
     private String neighborhood;
@@ -24,19 +17,19 @@ public class Attempt {
         this.id = id;
     }
 
-    public String getPlace() {
+    public String getNeighborhood() {
         return neighborhood;
     }
 
-    public void setPlace(String place) {
-        this.neighborhood = place;
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
     }
 
-    public String getObcjet() {
+    public String getObject() {
         return object;
     }
 
-    public void setObcjet(String obcjet) {
+    public void setObject(String obcjet) {
         this.object = obcjet;
     }
 

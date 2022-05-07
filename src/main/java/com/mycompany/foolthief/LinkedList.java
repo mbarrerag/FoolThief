@@ -1,11 +1,10 @@
 package com.mycompany.foolthief;
 
-
+/**
+ * Reportes de robo - Lista Doblemente Enlazada
+ * Lista que guarda instancias de la clase Stolen (reporte de robo).
+ */
 public class LinkedList {
-    /**
-     * Reportes de robo - Lista Doblemente Enlazada
-     * Lista que guarda instancias de la clase Stolen (reporte de robo).
-     */
     private Node<Stolen> head;
     private Node<Stolen> tail;
     private int length;
