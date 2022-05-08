@@ -143,15 +143,21 @@ public class LinkedList {
             return null;
         }
     }
-
-    public Stolen browseById(String id) {
+    
+    /**
+     * Busca un elemento identificado con el id dado y lo retorna.Realiza la comparación de todos los id de los elementos y el
+ que se recibe.
+     * @param id a buscar en la lista
+     * @return Objeto Stolen con el que coincide el id
+     */
+    public Stolen browseById(int id) {
         if (head != null) {
             Node<Stolen> pointer = tail;
             boolean flag = true;
             while (flag == true) {
                 if ((flag == false) || (pointer != null)) {
                     Stolen objectNode = pointer.getData();
-                    String idObject = objectNode.getId();
+                    int idObject = objectNode.getId();
                     if (id != idObject) {
                         pointer = pointer.getPrev();
                     } else {
@@ -211,30 +217,6 @@ public class LinkedList {
             tail = tail.getPrev();
             last.setPrev(null);
             length--;
-        }
-    }
-    
-    // A continuación métodos para pruebas (impresion en consola)
-    public void displayElements() {
-        if (head == null) {
-            System.out.println("No Elements");
-        } else {
-            Node<Stolen> pointer = tail;
-            while (pointer != null) {
-                Stolen actualData = pointer.getData();
-                String id = actualData.getId();
-                String name = actualData.getName();
-         
-                String date = actualData.getDate();
-                String hour = actualData.getHour();
-                String object = actualData.getObject();
-                String place = actualData.getPlace();
-                String neighborhood = actualData.getNeighborhood();
-                String description = actualData.getDescription();
-                String modusOperandi = actualData.getModusOperandi();
-          
-                pointer = pointer.getPrev();
-            }
         }
     }
 }
