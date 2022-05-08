@@ -143,7 +143,7 @@ public class MainInter {
 		panel = new JPanel();
 		panel.setBounds(32, 95, 777, 567);
 		panel.setLayout(null);
-		panel.setPreferredSize(new Dimension(900, 1400));
+		panel.setPreferredSize(new Dimension(1000, 1400));
 		panel.setBackground(Color.decode("#ffffff"));
 		scrollRecent.setViewportView(panel);
 		
@@ -243,12 +243,12 @@ public class MainInter {
 	public static void addLabel(String id, String date, String hour, String neighbornhood, String object,String modus) {
 		JTextArea text = new JTextArea("    Id:       " + id +  "       Date:     " + date + "      Hour:   "+ hour+ '\n'+'\n'+ "     Neighbornhood:     "+  neighbornhood +"     Object:     " + object + "     Modus:     "+modus);
 		Point location = lblNewLabel.getLocation();
-		text.setBounds(location.x+28, location.y+35, 769, 134);
+		text.setBounds(location.x+28, location.y+35, 800, 134);
 		text.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		text.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		text.setEditable(false);
 		text.setVisible(true);
-		lblNewLabel.setBounds(location.x, location.y+134, 769, 134);
+		lblNewLabel.setBounds(location.x, location.y+134, 800, 134);
 		panel.add(text);
 		frame.revalidate();
 		frame.repaint();
