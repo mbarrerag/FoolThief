@@ -17,7 +17,7 @@ public class Controller {
     public void insertData(String name, String date, String hour, String object, String place, String neightborhood, String description, String modusOperandi) {
         
         int newId;
-        newId=generateId();
+        newId=array.generateId();
         Stolen stolen = new Stolen(newId);
         stolen.setName(name);
         stolen.setDate(date);
@@ -57,13 +57,9 @@ public class Controller {
         
     }  
     
-    public int generateId() {
-        idNumber++;
-        
-        int id = idNumber;
-        array.addElement(id);
-        return id;
-     }
-    
-    
 }
+        
+      
+    
+    
+

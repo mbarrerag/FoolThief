@@ -6,18 +6,21 @@ public class DynamicArray {
     int arrayList[];
     int sizeOfArray = 0 ;
     private int count;
-  
+  int id=1;
     public DynamicArray() {
-        arrayList = new int [1];
+        arrayList = new int [10];
         count = 0;
-        sizeOfArray = 1;
+        sizeOfArray = 10;
     }
+    
      
+    
     public void addElement(int infDynamic) {
+        
         if (count == sizeOfArray) {
             growSize();      
         }
-        arrayList[count] = infDynamic;
+        arrayList[count] = infDynamic+1;
         count++;
     }
      
@@ -51,6 +54,14 @@ public class DynamicArray {
         }
         return result;
     }
+       public int generateId() {
+       
+        
+         id++;
+        System.out.println(id++);
+        addElement(id++);
+        return id;
+     }
     
 }
          
