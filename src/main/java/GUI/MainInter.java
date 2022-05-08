@@ -210,6 +210,8 @@ public class MainInter {
 		highlyStolen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				MainInter.top.TopObjects();
+				MainInter.top.countTopObjects();
 			
 			}
 		});
@@ -222,6 +224,10 @@ public class MainInter {
 		highlyDangerous.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+                MainInter.top.TopPlaces();
+                MainInter.top.countTopPlaces();
+                
 				 
 			}
 		});

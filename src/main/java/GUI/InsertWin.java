@@ -254,10 +254,7 @@ public class InsertWin {
                         
                         MainInter.controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
                         MainInter.addLabel(neightborhoodObj, dateObj, hourObj, descriptionObj, objectObj, modusoperandiObj);
-    /*Desde aqui*/	MainInter.top.TopObjects();
-                        MainInter.top.TopPlaces();
-                        MainInter.top.countTopPlaces();
-                        MainInter.top.countTopObjects();
+    /*Desde aqui*/	
                         
                         MainInter.enableFrame();
 				frame.setVisible(false);
