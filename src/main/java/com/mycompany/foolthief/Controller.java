@@ -55,7 +55,7 @@ public class Controller {
             Attempt element = stack.pop();
             int counter = 0;
             while (element != null) {
-                System.out.println(element.getId()); //toma los datos que necesite
+                // System.out.println(element.getId()); //toma los datos que necesite
                 auxiliar.push(element); // Inserta en la nueva pila
                 counter++;
             }
