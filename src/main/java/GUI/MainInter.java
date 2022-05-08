@@ -1,6 +1,7 @@
 package GUI;
 
 import com.mycompany.foolthief.Controller;
+import com.mycompany.foolthief.Tops;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -59,7 +60,7 @@ public class MainInter {
         
         // Clase que contiene todas las estructuras
         public static Controller controller = new Controller(); 
-        
+        public static Tops top = new Tops();
 	/**
 	 * Launch the application.
 	 */
