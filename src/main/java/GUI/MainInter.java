@@ -1,5 +1,7 @@
 package GUI;
 
+import com.mycompany.foolthief.Controller;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -45,7 +47,10 @@ public class MainInter {
 	private Button highlyStolen;
 	private Button highlyDangerous;
 	private Button eliminate;
-
+        
+        // Clase que contiene todas las estructuras
+        public static Controller controller = new Controller(); 
+        
 	/**
 	 * Launch the application.
 	 */

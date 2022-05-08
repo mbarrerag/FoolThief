@@ -59,7 +59,6 @@ public class InsertWin {
 	private Label descriptionL;
 	private Label modusOperandiL;
         
-        Controller controller = new Controller();
 
 	/**
 	 * Launch the application.
@@ -251,7 +250,9 @@ public class InsertWin {
                         String descriptionObj = description.getText();
                         String modusoperandiObj = modusOperandi.getText();
                         
-                        controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
+                        
+                        
+                        MainInter.controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
 			MainInter.enableFrame();
 				frame.setVisible(false);
                         }

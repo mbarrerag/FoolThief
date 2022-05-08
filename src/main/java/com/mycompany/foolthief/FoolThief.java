@@ -1,9 +1,11 @@
 package com.mycompany.foolthief;
 
+import GUI.MainInter;
+
 
 public class FoolThief {
     
     public static void main(String[] args) {
-        System.out.println("Proyecto Facha");
+        MainInter.main(null);
     }
 }
