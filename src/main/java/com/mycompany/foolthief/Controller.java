@@ -1,5 +1,6 @@
 package com.mycompany.foolthief;
 
+import GUI.MainInter;
 
 public class Controller {
     static Stack stack;
@@ -51,11 +52,13 @@ public class Controller {
         }
         
         public static void readStack() {
-            Stack auxiliar = new Stack();
+        	Stack auxiliar = new Stack();
             Attempt element = stack.pop();
+            int n = stack.size();
             int counter = 0;
-            while (element.size != null) {
-                 System.out.println(element.getId()); //toma los datos que necesite
+            while (counter <= n) {
+                // System.out.println(element.getId()); //toma los datos que necesite
+            	MainInter.addLabel(element.getId(), element.getDate(), element.getHour(), element.getNeighborhood(), element.getObject(), element.getModusOperandi());
                 auxiliar.push(element); // Inserta en la nueva pila
                 counter++;
             }
@@ -65,6 +68,7 @@ public class Controller {
                     stack.push(auxiliar.pop());
                     counter--;
                 }
+            
             }
         }
     }

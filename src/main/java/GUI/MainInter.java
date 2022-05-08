@@ -243,7 +243,7 @@ public class MainInter {
 	public static void addLabel(String id, String date, String hour, String neighbornhood, String object,String modus) {
 		JTextArea text = new JTextArea("    Id:       " + id +  "       Date:     " + date + "      Hour:   "+ hour+ '\n'+'\n'+ "     Neighbornhood:     "+  neighbornhood +"     Object:     " + object + "     Modus:     "+modus);
 		Point location = lblNewLabel.getLocation();
-		text.setBounds(location.x+28, location.y+28, 769, 134);
+		text.setBounds(location.x+28, location.y+35, 769, 134);
 		text.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		text.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		text.setEditable(false);
