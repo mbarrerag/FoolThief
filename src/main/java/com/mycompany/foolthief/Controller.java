@@ -20,11 +20,12 @@ public class Controller {
         
     }  
     
-    public void generateId() {
+    public String generateId() {
         idNumber++;
         String location = "Fl";
         String id = location + idNumber;
         array.addElement(id);
-    }
+        return id;
+     }
     
 }
