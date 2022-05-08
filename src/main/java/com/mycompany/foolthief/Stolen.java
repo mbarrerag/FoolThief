@@ -2,7 +2,7 @@ package com.mycompany.foolthief;
 
 
 public class Stolen {
-    private int id;
+    private String id;
     private String name;
     private String date;
     private String hour;
@@ -12,11 +12,11 @@ public class Stolen {
     private String description;
     private String modusOperandi;
     
-    public Stolen (int id) {
+    public Stolen (String id) {
         this.id = id;
     }
     
-    public int getId() {
+    public String getId() {
         return id;
     }
     

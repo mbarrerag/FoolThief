@@ -150,14 +150,14 @@ public class LinkedList {
      * @param id a buscar en la lista
      * @return Objeto Stolen con el que coincide el id
      */
-    public Stolen browseById(int id) {
+    /*public Stolen browseById(int id) {
         if (head != null) {
             Node<Stolen> pointer = tail;
             boolean flag = true;
             while (flag == true) {
                 if ((flag == false) || (pointer != null)) {
                     Stolen objectNode = pointer.getData();
-                    int idObject = objectNode.getId();
+                    String idObject = objectNode.getId();
                     if (id != idObject) {
                         pointer = pointer.getPrev();
                     } else {
@@ -167,7 +167,7 @@ public class LinkedList {
             }
         }
         return null;
-    }
+    }*/
     
     /**
      * Elimina el primer elemento de la lista.
