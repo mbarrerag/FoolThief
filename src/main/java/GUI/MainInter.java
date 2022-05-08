@@ -176,7 +176,7 @@ public class MainInter {
 		modify.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 		
+			 		Controller.readStack();
 			 }
 		});
 		  //view More

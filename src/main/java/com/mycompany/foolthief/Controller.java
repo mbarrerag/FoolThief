@@ -2,7 +2,7 @@ package com.mycompany.foolthief;
 
 
 public class Controller {
-    Stack stack;
+    static Stack stack;
     LinkedList list;
     Queue queue;
     DynamicArray array;
@@ -50,7 +50,7 @@ public class Controller {
             return w;
         }
         
-        public void readStack() {
+        public static void readStack() {
             Stack auxiliar = new Stack();
             Attempt element = stack.pop();
             int counter = 0;
