@@ -1,12 +1,13 @@
 package com.mycompany.foolthief;
-    
-   
+
+
 public class Controller {
     Stack stack;
     LinkedList list;
     Queue queue;
     DynamicArray array;
-    int idNumber = 0;
+    public static int id = 0;
+
     public Controller (){
         stack = new Stack();
         list = new LinkedList();
@@ -15,10 +16,7 @@ public class Controller {
     }
      
     public void insertData(String name, String date, String hour, String object, String place, String neightborhood, String description, String modusOperandi) {
-        
-        int newId;
-        newId=array.generateId();
-        Stolen stolen = new Stolen(newId);
+        Stolen stolen = new Stolen(id);
         stolen.setName(name);
         stolen.setDate(date);
         stolen.setHour(hour);
@@ -31,7 +29,7 @@ public class Controller {
         System.out.println(stolen.getName());
         System.out.println(stolen.getDate());
         System.out.println(stolen.getHour());
-        System.out.println(newId);
+        System.out.println(id);
         System.out.println(stolen.getDescription());
         System.out.println(stolen.getModusOperandi());
         System.out.println(stolen.getObject());
@@ -44,7 +42,7 @@ public class Controller {
         attempt.setNeighborhood(neightborhood);
         attempt.setModusOperandi(modusOperandi);
         attempt.setObject(object);
-        attempt.setId(idNumber);
+        attempt.setId(id);
         stack.push(attempt);
         System.out.println(attempt.getDate());
         System.out.println(attempt.getHour());
@@ -53,10 +51,9 @@ public class Controller {
         System.out.println(attempt.getNeighborhood());
         System.out.println(attempt.getModusOperandi());
         System.out.println("******************");
+        id++;
         
-        
-    }  
-    
+    }
 }
         
       

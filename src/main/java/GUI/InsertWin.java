@@ -250,10 +250,10 @@ public class InsertWin {
                         String neightborhoodObj= neighborhood.getText();
                         String descriptionObj = description.getText();
                         String modusoperandiObj = modusOperandi.getText();
-                       
+                        
                         controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
 			MainInter.enableFrame();
-				frame.dispose();
+				frame.setVisible(false);
                         }
 		});
 		
