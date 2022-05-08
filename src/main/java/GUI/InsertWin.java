@@ -43,12 +43,14 @@ public class InsertWin {
 	private Button save;
 	private JTextField fullName;
 	private JTextField date;
+	private JTextField hour;
 	private JTextField placeDescription;
 	private JTextField neighborhood;
 	private JTextField stolenObject;
 	private JTextField description;
 	private Label fullNameL;
 	private Label dateL;
+	private Label hourL;
 	private Label placeDescriptionL;
 	private Label neighborhoodL;
 	private Label stolenObjectL;
@@ -129,10 +131,14 @@ public class InsertWin {
 		fullNameL = new Label("-Write here your full name");
 		fullNameL.setBounds(46, 79, 924, 26);
 		frame.getContentPane().add(fullNameL);
-		  //Date And Hours
-		dateL = new Label("-Write here the date&hour the object was stolen");
-		dateL.setBounds(46, 150, 924, 26);
+		  //Date
+		dateL = new Label("-Write here the date ");
+		dateL.setBounds(46, 150, 460, 26);
 		frame.getContentPane().add(dateL);
+		  //Hours
+		hourL = new Label(" & hour the object was stolen");
+		hourL.setBounds(510, 150, 460, 26);
+	    frame.getContentPane().add(hourL);
 		  //Place Description
 		placeDescriptionL = new Label("-Write a breeve description of the place where the object was stolen");
 		placeDescriptionL.setBounds(46, 220, 924, 26);
@@ -158,10 +164,16 @@ public class InsertWin {
 		fullName.setBorder(new BevelBorder(BevelBorder.RAISED, UIManager.getColor("Button.disabledForeground"), new Color(0, 0, 0), UIManager.getColor("Button.foreground"), new Color(0, 0, 0)));
 	      //Date And Hours
 		date = new JTextField();
-		date.setBounds(46, 174, 924, 35);
+		date.setBounds(46, 174, 460, 35);
 		frame.getContentPane().add(date);
 		date.setColumns(date.getColumns());
 		date.setBorder(new BevelBorder(BevelBorder.RAISED, UIManager.getColor("Button.disabledForeground"), new Color(0, 0, 0), UIManager.getColor("Button.foreground"), new Color(0, 0, 0)));
+		  //Date And Hours
+		hour = new JTextField();
+		hour.setBounds(510, 174, 460, 35);
+		frame.getContentPane().add(hour);
+		hour.setColumns(date.getColumns());
+		hour.setBorder(new BevelBorder(BevelBorder.RAISED, UIManager.getColor("Button.disabledForeground"), new Color(0, 0, 0), UIManager.getColor("Button.foreground"), new Color(0, 0, 0)));
 		  //Place Description
 		placeDescription = new JTextField();
 		placeDescription.setBounds(46, 244, 924, 35);
