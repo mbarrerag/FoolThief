@@ -49,6 +49,7 @@ public class InsertWin {
 	private JTextField neighborhood;
 	private JTextField stolenObject;
 	private JTextField description;
+	private JTextField modusOperandi;
 	private Label fullNameL;
 	private Label dateL;
 	private Label hourL;
@@ -56,6 +57,7 @@ public class InsertWin {
 	private Label neighborhoodL;
 	private Label stolenObjectL;
 	private Label descriptionL;
+	private Label modusOperandiL;
         
         Controller controller = new Controller();
 
@@ -129,6 +131,7 @@ public class InsertWin {
 		title.setFont(new Font("Freestyle Script", Font.PLAIN, 50));
 		title.setBackground(Color.decode("#ffffff"));
 		
+		
 		//JLabes for TextField
 		  //Full Name
 		fullNameL = new Label("-Write here your full name");
@@ -158,6 +161,12 @@ public class InsertWin {
 		descriptionL = new Label("-Write here a breeve description of what happened");
 		descriptionL.setBounds(46, 430, 924, 26);
 		frame.getContentPane().add(descriptionL);
+		//Modus Operandi
+		modusOperandiL = new Label("-Write here the stealing method");
+		modusOperandiL.setBounds(46, 500, 924, 26);
+		frame.getContentPane().add(modusOperandiL);
+		
+		
 		//Text Fields
 		  //Full Name
 		fullName = new JTextField();
@@ -201,6 +210,12 @@ public class InsertWin {
 		frame.getContentPane().add(description);
 		description.setColumns(description.getColumns());
 		description.setBorder(new BevelBorder(BevelBorder.RAISED, UIManager.getColor("Button.disabledForeground"), new Color(0, 0, 0), UIManager.getColor("Button.foreground"), new Color(0, 0, 0)));
+		 //ModusOprandi
+		modusOperandi = new JTextField();
+		modusOperandi.setBounds(46, 524, 924, 35);
+		frame.getContentPane().add(modusOperandi);
+		modusOperandi.setColumns(description.getColumns());
+		modusOperandi.setBorder(new BevelBorder(BevelBorder.RAISED, UIManager.getColor("Button.disabledForeground"), new Color(0, 0, 0), UIManager.getColor("Button.foreground"), new Color(0, 0, 0)));
 		
 		// Buttons
 		  //Cancel
@@ -233,9 +248,10 @@ public class InsertWin {
                         String objectObj = stolenObject.getText();
                         String placeObj = placeDescription.getText();
                         String neightborhoodObj= neighborhood.getText();
-                        String descriptionObj = placeDescription.getText();
+                        String descriptionObj = description.getText();
+                        String modusoperandiObj = modusOperandi.getText();
                        
-                        controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, ,modusoperandiObj);
+                        controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
 			MainInter.enableFrame();
 				frame.dispose();
                         }
