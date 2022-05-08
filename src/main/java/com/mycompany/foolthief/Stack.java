@@ -55,7 +55,6 @@ public class Stack extends List {
         }
         //JOptionPane.showMessageDialog(null, inverstQueue);
         inverstQueue = "";
-    }     
-    
+    }
 }
 
