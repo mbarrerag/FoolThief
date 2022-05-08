@@ -1,15 +1,66 @@
 package com.mycompany.foolthief;
 
-import javax.swing.JOptionPane;
-
 
 public class Queue extends List {
-    String infQueue = "";
-    
     Queue (){
         super();
     }
 
+     /**
+     * Retorna el elemento que esta en la parte superior de la lista.
+     * @return string
+     */
+    public String peek() {
+        if (head != null) {
+            return (String) head.getData();
+        }
+        return null;
+    }
+
+    /**
+     * Encola el dato dado al final de la lista.
+     * @param string
+     */
+    public void enqueue(String data) {
+        Node<String> node = new Node<String>(data);
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            tail.setNext(node);
+            tail = node;
+            length++;
+        }
+    }
+    
+    /**
+     * Desencola los dato al principio de la lista el elemento menos reciente.
+     * @return string
+     */
+    public String dequeue() {
+        if (head != null) {
+            Node<String> first = head;
+            head = head.getNext();
+            first.setNext(null);
+            length--;
+            return first.getData();
+        }
+        return null;
+    }
+    
+
+    
+    /**
+     * Vacia la pila completamente.
+     */
+    public void makeEmpty() {
+        if (head != null) {
+            head = null;
+            tail = null;
+        }  
+    }
+        
+    /*
     public void showInformation() {
         Node journeyStack =  head;
         String inverstQueue = "";
@@ -25,33 +76,5 @@ public class Queue extends List {
             JOptionPane.showMessageDialog(null, inverstQueue);
         }
     }
-
-    public void makeEmpty() {
-        if (!isEmpty()){
-            head =  null;
-            tail=null;
-        }  
-    }
-
-    public boolean isEmpty() {
-        if (head==null){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void enqueue(String string) {
-        Node<String> nodeNew = new Node<String>(string);
-        nodeNew.getData();
-        nodeNew.setNext(null);
-        if (isEmpty()) {
-            head=nodeNew;
-            tail=nodeNew;
-        } else {
-            tail.setNext(nodeNew);
-            tail = nodeNew;
-            length++;
-        }
-    }
+    */
 }
