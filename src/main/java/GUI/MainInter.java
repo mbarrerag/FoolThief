@@ -232,12 +232,12 @@ public class MainInter {
 			}
 		});
 		
-		/*//paint some decoration
+		//paint some decoration
 		paneBorder = new JLabel("");
 		paneBorder.setBorder(new LineBorder(new Color(0, 0, 0), 4, false));
 		frame.getContentPane().add(paneBorder);
 		paneBorder.setVisible(true);
-		paneBorder.setBounds(0,0, 1256, 690);*/
+		paneBorder.setBounds(0,0, 1256, 690);
 	}
 	
 	public static void addLabel(String id, String date, String hour, String neighbornhood, String object,String modus) {
