@@ -37,7 +37,10 @@ public class Controller {
         System.out.println(stolen.getObject());
         System.out.println(stolen.getPlace());
         System.out.println(stolen.getNeighborhood());
-        
+        Attempt attempt = new Attempt();
+        attempt.setDate(date);
+        attempt.setHour(hour);
+        attempt.getId(newId);
         
         
         
