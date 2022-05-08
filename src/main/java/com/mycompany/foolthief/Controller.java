@@ -6,12 +6,12 @@ public class Controller {
     LinkedList list;
     Queue queue;
     DynamicArray array;
-    int u=0;
+    int u = 0;
     String w = "";
     int id = 0;
-    String v="";
+    String v = "";
+    
     public Controller (){
-        
         stack = new Stack();
         list = new LinkedList();
         queue = new Queue();
@@ -30,16 +30,7 @@ public class Controller {
         stolen.setDescription(description);
         stolen.setModusOperandi(modusOperandi);
         list.add(stolen);
-        System.out.println(stolen.getName());
-        System.out.println(stolen.getDate());
-        System.out.println(stolen.getHour());
-        System.out.println(w);
-        System.out.println(stolen.getDescription());
-        System.out.println(stolen.getModusOperandi());
-        System.out.println(stolen.getObject());
-        System.out.println(stolen.getPlace());
-        System.out.println(stolen.getNeighborhood());
-        System.out.println("******************");
+        
         Attempt attempt = new Attempt();
         attempt.setDate(date);
         attempt.setHour(hour);
@@ -48,13 +39,6 @@ public class Controller {
         attempt.setObject(object);
         attempt.setId(w);
         stack.push(attempt);
-        System.out.println(attempt.getDate());
-        System.out.println(attempt.getHour());
-        System.out.println(attempt.getId());
-        System.out.println(attempt.getModusOperandi());
-        System.out.println(attempt.getNeighborhood());
-        System.out.println(attempt.getModusOperandi());
-        System.out.println("******************");
         id++;
     }
         

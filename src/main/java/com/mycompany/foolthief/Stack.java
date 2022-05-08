@@ -6,13 +6,15 @@ public class Stack extends List {
         super();
     }
     
-    public void pop() {
+    public Attempt pop() {
         if (head != null) {
             Node<Attempt> first = head;
             head = head.getNext();
             first.setNext(null);
             length--;
+            return first.getData();
         }
+        return null;
     }
     
     public void push(Attempt attempt) {
