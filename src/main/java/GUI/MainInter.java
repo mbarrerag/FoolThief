@@ -175,8 +175,8 @@ public class MainInter {
 		modify.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 System.out.println(Controller.attempt.getId());		
-			 }
+			 		
+			}
 		});
 		  //view More
 		viewMore = new Button("View More");
