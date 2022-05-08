@@ -46,11 +46,26 @@ public class Controller {
            u=0;
            u++;
            w = "F"+id;
-         
            array.addElement(w);
-         
-        return w;
-       
+            return w;
+        }
+        
+        public void readStack() {
+            Stack auxiliar = new Stack();
+            Attempt element = stack.pop();
+            int counter = 0;
+            while (element != null) {
+                System.out.println(element.getId()); //toma los datos que necesite
+                auxiliar.push(element); // Inserta en la nueva pila
+                counter++;
+            }
+            // Rellena la pila principal
+            if (counter == auxiliar.size()) {
+                while (counter > 0) {
+                    stack.push(auxiliar.pop());
+                    counter--;
+                }
+            }
         }
     }
 

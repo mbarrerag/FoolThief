@@ -21,7 +21,6 @@ public class Stack extends List {
         Node<Attempt> node = new Node<Attempt>(attempt);
         node.setNext(head);
         head = node;
-        tail = node;
         length++;
     }
 
