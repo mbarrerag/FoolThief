@@ -1,6 +1,6 @@
 package com.mycompany.foolthief;
 
-import javax.swing.JOptionPane;
+
 
 
 public class Stack extends List {
@@ -53,7 +53,7 @@ public class Stack extends List {
          inverstQueue +=  journeyStack.getData() + "\n";
          journeyStack=journeyStack.getNext();
         }
-        JOptionPane.showMessageDialog(null, inverstQueue);
+        //JOptionPane.showMessageDialog(null, inverstQueue);
         inverstQueue = "";
     }     
     

@@ -1,6 +1,7 @@
 package GUI;
 
-import com.mycompany.foolthief.Stolen;
+import com.mycompany.foolthief.Controller;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -55,6 +56,8 @@ public class InsertWin {
 	private Label neighborhoodL;
 	private Label stolenObjectL;
 	private Label descriptionL;
+        
+        Controller controller = new Controller();
 
 	/**
 	 * Launch the application.
@@ -223,10 +226,19 @@ public class InsertWin {
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			Stolen a = new Stolen("45");
-                        a.setName(fullName.getText());
-                        title.setText(a.getName());
-			}
+			
+                        String nameObj = fullName.getText();
+                        String dateObj = date.getText();
+                        String hourObj = hour.getText();
+                        String objectObj = stolenObject.getText();
+                        String placeObj = placeDescription.getText();
+                        String neightborhoodObj= neighborhood.getText();
+                        String descriptionObj = placeDescription.getText();
+                       
+                        controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, ,modusoperandiObj);
+			MainInter.enableFrame();
+				frame.dispose();
+                        }
 		});
 		
 		
