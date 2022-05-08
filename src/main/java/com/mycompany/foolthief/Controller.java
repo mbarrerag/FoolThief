@@ -37,6 +37,7 @@ public class Controller {
         System.out.println(stolen.getObject());
         System.out.println(stolen.getPlace());
         System.out.println(stolen.getNeighborhood());
+        System.out.println("******************");
         Attempt attempt = new Attempt();
         attempt.setDate(date);
         attempt.setHour(hour);
@@ -44,7 +45,14 @@ public class Controller {
         attempt.setModusOperandi(modusOperandi);
         attempt.setObject(object);
         attempt.setId(idNumber);
-        
+        stack.push(attempt);
+        System.out.println(attempt.getDate());
+        System.out.println(attempt.getHour());
+        System.out.println(attempt.getId());
+        System.out.println(attempt.getModusOperandi());
+        System.out.println(attempt.getNeighborhood());
+        System.out.println(attempt.getModusOperandi());
+        System.out.println("******************");
         
         
     }  
