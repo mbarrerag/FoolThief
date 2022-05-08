@@ -2,18 +2,18 @@ package com.mycompany.foolthief;
 
 
 public class Attempt {
-    private int id;
+    private String id;
     private String neighborhood;
     private String object;
     private String date;
     private String hour;
     private String modusOperandi;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
