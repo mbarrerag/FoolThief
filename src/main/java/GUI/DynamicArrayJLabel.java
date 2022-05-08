@@ -4,18 +4,16 @@ import javax.swing.JLabel;
 
 
 public class DynamicArrayJLabel {
-   
     JLabel arrayList[];
     int sizeOfArray = 0 ;
     private int count;
-  int id=1;
+    int id = 1;
+    
     public DynamicArrayJLabel() {
         arrayList = new JLabel [10];
         count = 0;
         sizeOfArray = 10;
     }
-    
-     
     
     public void addElement(JLabel infDynamic) {
         if (count == sizeOfArray) {
