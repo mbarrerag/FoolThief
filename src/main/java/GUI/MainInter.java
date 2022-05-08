@@ -176,7 +176,7 @@ public class MainInter {
 		modify.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 		Controller.readStack();
+
 			 }
 		});
 		  //view More
@@ -210,7 +210,7 @@ public class MainInter {
 		highlyStolen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainInter.top.TopObjects();
+				MainInter.top.topObjects();
 				MainInter.top.countTopObjects();
 			
 			}
@@ -224,9 +224,8 @@ public class MainInter {
 		highlyDangerous.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-                MainInter.top.TopPlaces();
-                MainInter.top.countTopPlaces();
+                            MainInter.top.topPlaces();
+                            MainInter.top.countTopPlaces();
                 
 				 
 			}

@@ -1,7 +1,10 @@
 package com.mycompany.foolthief;
 
+import javax.swing.JOptionPane;
+
 
 public class Queue extends List {
+    String infQueue = "";
     Queue (){
         super();
     }
@@ -60,7 +63,7 @@ public class Queue extends List {
         }  
     }
         
-    /*
+
     public void showInformation() {
         Node journeyStack =  head;
         String inverstQueue = "";
@@ -76,5 +79,5 @@ public class Queue extends List {
             JOptionPane.showMessageDialog(null, inverstQueue);
         }
     }
-    */
+
 }

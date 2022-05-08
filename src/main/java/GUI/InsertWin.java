@@ -99,7 +99,7 @@ public class InsertWin {
 		frame.setResizable(false);
 		frame.setTitle("FoolThief");
 		frame.setIconImage(image2);
-		frame.setBounds(size.width/7, size.height/7, 1040, 670);
+		frame.setBounds(size.width/7, size.height/10, 1040, 670);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.decode("#02aed9"));
@@ -253,9 +253,12 @@ public class InsertWin {
                         
                         
                         MainInter.controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
-                        Controller.readStack();
     /*Desde aqui*/	
-                        
+                        MainInter.top.setNeighborhood(neightborhoodObj);
+                        MainInter.top.setObject(objectObj);
+                        MainInter.top.topPlaces();
+                        MainInter.top.topObjects();
+                        Controller.readStack();
                         MainInter.enableFrame();
 				frame.setVisible(false);
                         }
