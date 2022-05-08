@@ -1,8 +1,6 @@
 package com.mycompany.foolthief;
 
 
-
-
 public class Stack extends List {
     Stack() {
         super();
@@ -10,7 +8,7 @@ public class Stack extends List {
     
     public void pop() {
         if (head != null) {
-            Node first = head;
+            Node<Attempt> first = head;
             head = head.getNext();
             first.setNext(null);
             length--;
@@ -21,40 +19,22 @@ public class Stack extends List {
         Node<Attempt> node = new Node<Attempt>(attempt);
         node.setNext(head);
         head = node;
+        tail = node;
         length++;
     }
 
-    public String peek() {
-        return (String) head.getData();
+    public Attempt peek() {
+        if (head != null) {
+            return (Attempt) head.getData();
+        }
+        return null;
     }
     
     public void makeEmptystack(){
         if (head != null){
-            head=null;
-            
+            head = null;
+            tail = null;
         }
-    }    
-     /*
-        public void MostrarValores(){
-        Nodo recorrido = UltimoValorIngresado;
-        
-        while(recorrido != null){
-            Lista += recorrido.informacion + "\n";
-            recorrido = recorrido.siguiente;
-        }
-        JOptionPane.showMessageDialog(null, Lista);
-        Lista = "";
-    }*/
-     
-    public void showInformationStack(){
-        Node journeyStack = head;
-        String inverstQueue = "";
-        while(journeyStack != null){
-         inverstQueue +=  journeyStack.getData() + "\n";
-         journeyStack=journeyStack.getNext();
-        }
-        //JOptionPane.showMessageDialog(null, inverstQueue);
-        inverstQueue = "";
     }
 }
 

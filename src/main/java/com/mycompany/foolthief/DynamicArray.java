@@ -2,21 +2,18 @@ package com.mycompany.foolthief;
 
 
 public class DynamicArray {
-   
     int arrayList[];
     int sizeOfArray = 0 ;
     private int count;
-  int id=1;
+    int id = 1;
+    
     public DynamicArray() {
         arrayList = new int [10];
         count = 0;
         sizeOfArray = 10;
     }
     
-     
-    
     public void addElement(int infDynamic) {
-        
         if (count == sizeOfArray) {
             growSize();      
         }
@@ -54,15 +51,13 @@ public class DynamicArray {
         }
         return result;
     }
-       public int generateId() {
-       
-        
-         id++;
+    
+    public int generateId() {
+        id++;
         System.out.println(id++);
         addElement(id++);
         return id;
-     }
-    
+    }
 }
          
          
