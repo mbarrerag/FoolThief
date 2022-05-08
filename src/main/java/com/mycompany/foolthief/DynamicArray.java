@@ -3,17 +3,17 @@ package com.mycompany.foolthief;
 
 public class DynamicArray {
    
-    String arrayList[];
+    int arrayList[];
     int sizeOfArray = 0 ;
     private int count;
   
     public DynamicArray() {
-        arrayList = new String [1];
+        arrayList = new int [1];
         count = 0;
         sizeOfArray = 1;
     }
      
-    public void addElement(String infDynamic) {
+    public void addElement(int infDynamic) {
         if (count == sizeOfArray) {
             growSize();      
         }
@@ -22,9 +22,9 @@ public class DynamicArray {
     }
      
     public void growSize() { //Metodo para hacer crecer el arreglo 
-        String temp[] = null;
+        int temp[] = null;
         if (count == sizeOfArray) { //Si el arreglo se encuentra llego creamos un arreglo con el doble de la capacidad
-            temp = new String[sizeOfArray * 2];
+            temp = new int[sizeOfArray * 2];
         }
         for (int i = 0; i<sizeOfArray;i++) {
             temp[i] = arrayList[i]; //Copiamos los elementos del viejo array
@@ -40,7 +40,7 @@ public class DynamicArray {
         for (int i=count-1; i>index; i--) {
             arrayList[i+1] = arrayList[i];
         }
-        arrayList[index] = infDynamic;
+        //arrayList[index] = infDynamic;
         count++;
     }
      

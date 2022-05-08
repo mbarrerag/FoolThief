@@ -16,7 +16,7 @@ public class Controller {
      
     public void insertData(String name, String date, String hour, String object, String place, String neightborhood, String description, String modusOperandi) {
         
-        String newId;
+        int newId;
         newId=generateId();
         Stolen stolen = new Stolen(newId);
         stolen.setName(name);
@@ -40,16 +40,19 @@ public class Controller {
         Attempt attempt = new Attempt();
         attempt.setDate(date);
         attempt.setHour(hour);
-        attempt.getId(newId);
+        attempt.setNeighborhood(neightborhood);
+        attempt.setModusOperandi(modusOperandi);
+        attempt.setObject(object);
+        attempt.setId(idNumber);
         
         
         
     }  
     
-    public String generateId() {
+    public int generateId() {
         idNumber++;
-        String location = "Fl";
-        String id = location + idNumber;
+        
+        int id = idNumber;
         array.addElement(id);
         return id;
      }
