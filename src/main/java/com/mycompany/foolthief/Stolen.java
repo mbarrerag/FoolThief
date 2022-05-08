@@ -4,7 +4,6 @@ package com.mycompany.foolthief;
 public class Stolen {
     private String id;
     private String name;
-    private String lastname;
     private String date;
     private String hour;
     private String object;
@@ -27,14 +26,6 @@ public class Stolen {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     public String getDate() {
