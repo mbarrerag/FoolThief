@@ -1,6 +1,7 @@
 package GUI;
 
 import com.mycompany.foolthief.Controller;
+import com.mycompany.foolthief.Queue;
 import com.mycompany.foolthief.Tops;
 
 import java.awt.BorderLayout;
@@ -55,6 +56,8 @@ public class MainInter {
 	private Button highlyStolen;
 	private Button highlyDangerous;
 	private Button eliminate;
+	private static JPanel panelS;
+	public static JTextArea text;
 	public static JPanel panel;
 	public static DynamicArrayJLabel SLabels;
         
@@ -100,7 +103,7 @@ public class MainInter {
 		frame.setResizable(false);
 		frame.setTitle("FoolThief");
 		frame.setIconImage(image2);
-		frame.setBounds(size.width/7, size.height/7, 1272, 729);
+		frame.setBounds(size.width/7, size.height/11, 1272, 729);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.decode("#02aed9"));
@@ -140,10 +143,11 @@ public class MainInter {
 		scrollRecent.setVisible(true);
 		scrollRecent.setBackground(Color.decode("#ffffff"));
 		
+		//panel recent pile push
 		panel = new JPanel();
 		panel.setBounds(32, 95, 777, 567);
 		panel.setLayout(null);
-		panel.setPreferredSize(new Dimension(900, 1400));
+		panel.setPreferredSize(new Dimension(850, 6000));
 		panel.setBackground(Color.decode("#ffffff"));
 		scrollRecent.setViewportView(panel);
 		
@@ -152,6 +156,13 @@ public class MainInter {
 		lblNewLabel.setBounds(0, 0, 0, 0);
 		lblNewLabel.setVisible(false);
 		panel.add(lblNewLabel);
+		
+		//panel stolen object / danger places
+		panelS = new JPanel();
+		panelS.setBounds(32, 95, 777, 567);
+		panelS.setLayout(null);
+		panelS.setPreferredSize(new Dimension(900, 1400));
+		panelS.setBackground(Color.decode("#ffffff"));
 		
 		
 		
@@ -176,7 +187,13 @@ public class MainInter {
 		modify.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 		Controller.readStack();
+			 		panel.removeAll();
+			 		frame.revalidate();
+			 		frame.repaint();
+			 		lblNewLabel.setBounds(0, 0, 0, 0);
+			 		frame.setEnabled(false);
+					InsertWin.main(null);
+			 		
 			 }
 		});
 		  //view More
@@ -187,7 +204,11 @@ public class MainInter {
 		viewMore.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+				panel.setVisible(true);
+				panelS.setVisible(false);
+				scrollRecent.setViewportView(panel);
+				frame.revalidate();
+				frame.repaint();
 			}
 		});
 		  //Eliminate
@@ -198,7 +219,10 @@ public class MainInter {
 		eliminate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+			panel.removeAll();
+			frame.revalidate();
+			frame.repaint();
+			lblNewLabel.setBounds(0, 0, 0, 0);
 			}
 		});
 		  //Highly Stolen Objects
@@ -210,8 +234,13 @@ public class MainInter {
 		highlyStolen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				scrollRecent.setViewportView(panelS);
 				MainInter.top.TopObjects();
 				MainInter.top.countTopObjects();
+				panel.setVisible(false);
+				panelS.setVisible(true);
+				frame.revalidate();
+				frame.repaint();
 			
 			}
 		});
@@ -224,20 +253,24 @@ public class MainInter {
 		highlyDangerous.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				scrollRecent.setViewportView(panelS);
                 MainInter.top.TopPlaces();
                 MainInter.top.countTopPlaces();
+				panel.setVisible(false);
+				panelS.setVisible(true);
+				frame.revalidate();
+				frame.repaint();
                 
 				 
 			}
 		});
 		
-		/*//paint some decoration
+		//paint some decoration
 		paneBorder = new JLabel("");
 		paneBorder.setBorder(new LineBorder(new Color(0, 0, 0), 4, false));
 		frame.getContentPane().add(paneBorder);
 		paneBorder.setVisible(true);
-		paneBorder.setBounds(0,0, 1256, 690);*/
+		paneBorder.setBounds(0,0, 1256, 690);
 	}
 	
 	public static void addLabel(String id, String date, String hour, String neighbornhood, String object,String modus) {
@@ -250,6 +283,16 @@ public class MainInter {
 		text.setVisible(true);
 		lblNewLabel.setBounds(location.x, location.y+134, 769, 134);
 		panel.add(text);
+		frame.revalidate();
+		frame.repaint();
+	}
+	
+	public static void addComponent(Text infor) {
+		panelS.remove(infor);
+		frame.revalidate();
+		frame.repaint();
+		panelS.add(infor);
+		infor.setEditable(false);
 		frame.revalidate();
 		frame.repaint();
 	}

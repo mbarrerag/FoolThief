@@ -99,7 +99,7 @@ public class InsertWin {
 		frame.setResizable(false);
 		frame.setTitle("FoolThief");
 		frame.setIconImage(image2);
-		frame.setBounds(size.width/7, size.height/7, 1040, 670);
+		frame.setBounds(size.width/7, size.height/11, 1040, 670);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.decode("#02aed9"));

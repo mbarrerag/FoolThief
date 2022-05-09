@@ -1,6 +1,10 @@
 package com.mycompany.foolthief;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
+import GUI.MainInter;
+import GUI.Text;
 
 
 public class Queue extends List {
@@ -9,7 +13,7 @@ public class Queue extends List {
     Queue (){
         super();
     }
-
+    
     public void showInformation() {
         Node journeyStack =  head;
         String inverstQueue = "";
@@ -22,7 +26,9 @@ public class Queue extends List {
         for (int i=chain.length-1; i>=0; i--){
             inverstQueue += "\n"+chain[i];
             infQueue = "";
-            JOptionPane.showMessageDialog(null, inverstQueue);
+            Text danger = new Text ("- "+inverstQueue+'\n');
+            MainInter.addComponent(danger);	
+            		;
         }
     }
 
