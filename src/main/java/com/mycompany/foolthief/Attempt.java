@@ -1,6 +1,9 @@
 package com.mycompany.foolthief;
 
-
+/**
+ * 
+ * 
+ */
 public class Attempt {
     
     private String id;

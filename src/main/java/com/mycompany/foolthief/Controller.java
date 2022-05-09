@@ -1,24 +1,39 @@
 package com.mycompany.foolthief;
 
 import GUI.MainInter;
-
+/**
+ * Clase la cual permite recibir recibir la informacion de la interfaz
+ * 
+ */
 public class Controller {
     static Stack stack;
-    LinkedList list;
+    DoubleLinkedList list;
     Queue queue;
     DynamicArray array;
     int u = 0;
     String w = "";
     public static int id = 0;
     String v = "";
-    
+    /**
+     * Crea objetos de las diferentes estructuras de datos 
+     */
     public Controller (){
         stack = new Stack();
-        list = new LinkedList();
+        list = new DoubleLinkedList();
         queue = new Queue();
         array = new DynamicArray();
     }
-     
+     /**
+      * Ingresa la informacion hacia la clase Stolen
+      * @param name Nombre recbido en la interfaz.
+      * @param date Fecha recibida en la interfaz.
+      * @param hour Hora recibida en la interfaz.
+      * @param object Objeto robado, recibido en la interfaz.
+      * @param place  Lugar del robo, recibido en la interfaz.
+      * @param neightborhood Localidad, recibida en la interfaz.
+      * @param description Descripcion del robo, recibido en la interfaz.
+      * @param modusOperandi modusOperandi del robo, recibido en la interfaz.
+      */
     public void insertData(String name, String date, String hour, String object, String place, String neightborhood, String description, String modusOperandi) {
         counterId();
         Stolen stolen = new Stolen(w);
@@ -42,14 +57,19 @@ public class Controller {
         stack.push(attempt);
         id++;
     }
-        
+        /**
+         * Crea un identificador unico con un prefijo F
+         * @return Identificador unico de cada usuario 
+         */
     public String counterId(){
         u++;
-        w = "F"+id;
+        w = "FL#"+id;
         array.addElement(w);
         return w;
     }
-        
+        /**
+         * 
+         */
     public static void readStack() {
         int n = stack.size();
         int counter = 0;
@@ -59,12 +79,17 @@ public class Controller {
             counter++;
         }
     }
+    /**
+     * Permite eliminar el ultimo dato ingresado
+     */
     public void deleteData(){
         list.removeLast();
         array.Eliminar();
         id--;
     }
-    
+    /**
+     * Permite realizar una modificacion de la informacion ingresada
+     */
     public void modificarData(){
         deleteData();
     }

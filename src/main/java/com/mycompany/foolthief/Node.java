@@ -1,5 +1,9 @@
 package com.mycompany.foolthief;
-
+/**
+ * 
+ * 
+ * @param <T> 
+ */
 
 public class Node<T> {
     private Node<T> next;
