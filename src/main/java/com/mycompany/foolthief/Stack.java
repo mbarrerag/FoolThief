@@ -38,7 +38,6 @@ public class Stack extends List {
     public void makeEmpty() {
         if (head != null){
             head = null;
-            tail = null;
         }
     }
 }

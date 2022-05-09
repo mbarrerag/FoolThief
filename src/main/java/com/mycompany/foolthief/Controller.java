@@ -20,7 +20,7 @@ public class Controller {
     }
      
     public void insertData(String name, String date, String hour, String object, String place, String neightborhood, String description, String modusOperandi) {
-        CounterId();
+        counterId();
         Stolen stolen = new Stolen(w);
         stolen.setName(name);
         stolen.setDate(date);
@@ -43,7 +43,7 @@ public class Controller {
         id++;
     }
         
-    public String CounterId(){
+    public String counterId(){
         u=0;
         u++;
         w = "F"+id;
