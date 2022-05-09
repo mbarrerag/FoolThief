@@ -210,7 +210,7 @@ public class MainInter {
 		highlyStolen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainInter.top.TopObjects();
+				MainInter.top.topObjects();
 				MainInter.top.countTopObjects();
 			
 			}
@@ -225,7 +225,7 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-                MainInter.top.TopPlaces();
+                MainInter.top.topPlaces();
                 MainInter.top.countTopPlaces();
                 
 				 
