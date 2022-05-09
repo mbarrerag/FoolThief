@@ -52,21 +52,12 @@ public class Controller {
     }
         
     public static void readStack() {
-        Stack auxiliar = new Stack();
         int n = stack.size();
         int counter = 0;
         while (counter < n) {
             Attempt element = stack.pop();
             MainInter.addLabel(element.getId(), element.getDate(), element.getHour(), element.getNeighborhood(), element.getObject(), element.getModusOperandi());
-            auxiliar.push(element);
             counter++;
-            
-        }
-        if (counter == auxiliar.size()) {
-            while (counter > 0) {
-                stack.push(auxiliar.pop());
-                counter--;
-            }
         }
     }
 }

@@ -235,7 +235,7 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
-				MainInter.top.TopObjects();
+				MainInter.top.topObjects();
 				MainInter.top.countTopObjects();
 				panel.setVisible(false);
 				panelS.setVisible(true);
@@ -254,7 +254,7 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
-                MainInter.top.TopPlaces();
+                MainInter.top.topPlaces();
                 MainInter.top.countTopPlaces();
 				panel.setVisible(false);
 				panelS.setVisible(true);
