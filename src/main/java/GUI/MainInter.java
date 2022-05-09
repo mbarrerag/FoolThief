@@ -224,9 +224,8 @@ public class MainInter {
 		highlyDangerous.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-                MainInter.top.topPlaces();
-                MainInter.top.countTopPlaces();
+                                MainInter.top.topPlaces();
+                                MainInter.top.countTopPlaces();
                 
 				 
 			}

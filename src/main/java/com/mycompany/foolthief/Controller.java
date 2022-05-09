@@ -43,35 +43,35 @@ public class Controller {
         id++;
     }
         
-        public String CounterId(){
-           u=0;
-           u++;
-           w = "F"+id;
-           array.addElement(w);
-            return w;
-        }
+    public String CounterId(){
+        u=0;
+        u++;
+        w = "F"+id;
+        array.addElement(w);
+         return w;
+    }
         
-        public static void readStack() {
-        	Stack auxiliar = new Stack();
-            Attempt element = stack.pop();
-            int n = stack.size();
-            int counter = 0;
-            while (counter <= n) {
-                // System.out.println(element.getId()); //toma los datos que necesite
-            	MainInter.addLabel(element.getId(), element.getDate(), element.getHour(), element.getNeighborhood(), element.getObject(), element.getModusOperandi());
-                auxiliar.push(element); // Inserta en la nueva pila
-                counter++;
+    public static void readStack() {
+        Stack auxiliar = new Stack();
+        Attempt element = stack.pop();
+        int n = stack.size();
+        int counter = 0;
+        while (counter <= n) {
+            // System.out.println(element.getId()); //toma los datos que necesite
+            MainInter.addLabel(element.getId(), element.getDate(), element.getHour(), element.getNeighborhood(), element.getObject(), element.getModusOperandi());
+            auxiliar.push(element); // Inserta en la nueva pila
+            counter++;
+        }
+        // Rellena la pila principal
+        if (counter == auxiliar.size()) {
+            while (counter > 0) {
+                stack.push(auxiliar.pop());
+                counter--;
             }
-            // Rellena la pila principal
-            if (counter == auxiliar.size()) {
-                while (counter > 0) {
-                    stack.push(auxiliar.pop());
-                    counter--;
-                }
-            
-            }
+
         }
     }
+}
 
         
       
