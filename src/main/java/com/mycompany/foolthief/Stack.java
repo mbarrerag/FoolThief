@@ -6,6 +6,10 @@ public class Stack extends List {
         super();
     }
     
+    /**
+     * Elimina el elemento mas núevo de la pila.
+     * @return attempt: Instancia de tipo Attempt más reciente.
+     */
     public Attempt pop() {
         if (head != null) {
             Node<Attempt> first = head;
@@ -17,24 +21,23 @@ public class Stack extends List {
         return null;
     }
     
+    /**
+     * Inserta en la pila un elemento Attempt.
+     * @param attempt: Instancia de tipo Attempt
+     */
     public void push(Attempt attempt) {
         Node<Attempt> node = new Node<Attempt>(attempt);
         node.setNext(head);
         head = node;
         length++;
     }
-
-    public Attempt peek() {
-        if (head != null) {
-            return (Attempt) head.getData();
-        }
-        return null;
-    }
     
-    public void makeEmptystack(){
+    /**
+     * Vacia la pila completamente.
+     */
+    public void makeEmpty() {
         if (head != null){
             head = null;
-            tail = null;
         }
     }
 }

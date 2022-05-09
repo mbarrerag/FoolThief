@@ -1,7 +1,6 @@
 package com.mycompany.foolthief;
 
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 
 import GUI.MainInter;
 import GUI.Text;
@@ -12,24 +11,6 @@ public class Queue extends List {
     
     Queue (){
         super();
-    }
-    
-    public void showInformation() {
-        Node journeyStack =  head;
-        String inverstQueue = "";
-        while (journeyStack != null ) {
-            infQueue += journeyStack.getData()+ "\n";
-            journeyStack=journeyStack.getNext();
-        }
-
-        String chain[] = infQueue.split("\n ");
-        for (int i=chain.length-1; i>=0; i--){
-            inverstQueue += "\n"+chain[i];
-            infQueue = "";
-            Text danger = new Text ("- "+inverstQueue+'\n');
-            MainInter.addComponent(danger);	
-            		;
-        }
     }
 
     public void makeEmpty() {
@@ -46,7 +27,11 @@ public class Queue extends List {
             return false;
         }
     }
-
+    
+    /**
+     * Encola el dato dado al final de la lista.
+     * @param string
+     */
     public void enqueue(String string) {
         Node<String> nodeNew = new Node<String>(string);
         nodeNew.getData();
@@ -58,6 +43,38 @@ public class Queue extends List {
             tail.setNext(nodeNew);
             tail = nodeNew;
             length++;
+        }
+    }
+    
+    /**
+     * Desencola los dato al principio de la lista el elemento menos reciente.
+     * @return string
+     */
+    public String dequeue() {
+        if (head != null) {
+            Node<String> first = head;
+            head = head.getNext();
+            first.setNext(null);
+            length--;
+            return first.getData();
+        }
+        return null;
+    }
+    
+     public void showInformation() {
+        Node journeyStack =  head;
+        String inverstQueue = "";
+        while (journeyStack != null ) {
+            infQueue += journeyStack.getData()+ "\n";
+            journeyStack=journeyStack.getNext();
+        }
+
+        String chain[] = infQueue.split("\n ");
+        for (int i=chain.length-1; i>=0; i--){
+            inverstQueue += "\n"+chain[i];
+            infQueue = "";
+            Text danger = new Text ("- "+inverstQueue+'\n');
+            MainInter.addComponent(danger);
         }
     }
 }

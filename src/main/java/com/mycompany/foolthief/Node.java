@@ -2,8 +2,8 @@ package com.mycompany.foolthief;
 
 
 public class Node<T> {
-    private Node next;
-    private Node prev;
+    private Node<T> next;
+    private Node<T> prev;
     private T data;
     
     Node(T data) {
@@ -20,19 +20,19 @@ public class Node<T> {
         this.data = data;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
-  
-    public Node getPrev() {
+
+    public Node<T> getPrev() {
         return prev;
     }
 
-    public void setPrev(Node prev) {
+    public void setPrev(Node<T> prev) {
         this.prev = prev;
     }
 }

@@ -145,12 +145,13 @@ public class LinkedList {
     }
     
     /**
-     * Busca un elemento identificado con el id dado y lo retorna.Realiza la comparación de todos los id de los elementos y el
- que se recibe.
+     * Busca un elemento identificado con el id dado y lo retorna.
+     * Realiza la comparación de todos los id de los elementos y el 
+     * que se recibe.
      * @param id a buscar en la lista
      * @return Objeto Stolen con el que coincide el id
      */
-    /*public Stolen browseById(int id) {
+    public Stolen browseById(String id) {
         if (head != null) {
             Node<Stolen> pointer = tail;
             boolean flag = true;
@@ -167,7 +168,7 @@ public class LinkedList {
             }
         }
         return null;
-    }*/
+    }
     
     /**
      * Elimina el primer elemento de la lista.

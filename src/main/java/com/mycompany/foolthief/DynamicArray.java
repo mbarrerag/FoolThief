@@ -47,23 +47,21 @@ public class DynamicArray {
        //  arrayList[index]= infDynamic;
          count++;
      }
-      public String showElements(){
-          String resoult = "";
-          for (int i = 0; i < sizeofarray; i++){   
-   
- resoult += (arrayList[i] + " ");   
-
-}
-          System.out.println(resoult);
-          return resoult;  
-      }
      
-       public int Aumnetar(){
-             u++;
+    public String showElements(){
+        String resoult = "";
+        for (int i = 0; i < sizeofarray; i++) {
+            resoult += (arrayList[i] + " ");   
+        }
+        System.out.println(resoult);
+        return resoult;  
+    }
+     
+    public int Aumnetar(){
+        u++;
         return u;     
-   } 
-                     
-                   }
+    }
+}
 
 
     
