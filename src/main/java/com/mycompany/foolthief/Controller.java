@@ -9,7 +9,7 @@ public class Controller {
     DynamicArray array;
     int u = 0;
     String w = "";
-    int id = 0;
+    public static int id = 0;
     String v = "";
     
     public Controller (){
@@ -44,7 +44,6 @@ public class Controller {
     }
         
     public String counterId(){
-        u=0;
         u++;
         w = "F"+id;
         array.addElement(w);
@@ -59,6 +58,17 @@ public class Controller {
             MainInter.addLabel(element.getId(), element.getDate(), element.getHour(), element.getNeighborhood(), element.getObject(), element.getModusOperandi());
             counter++;
         }
+    }
+    public void deleteData(){
+        list.removeLast();
+        array.Eliminar();
+   
+        id--;
+
+         
+    }
+    public void modificarData(){
+        deleteData();
     }
 }
 

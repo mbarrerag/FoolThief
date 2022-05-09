@@ -119,7 +119,7 @@ public class Tops {
                 }
             }
         }
-        for (int i=19; i>13; i--) {
+        for (int i=0; i>6; i--) {
             int index = Integer.parseInt(auxiliar[i]);
             queue.enqueue(ObjArray[index]);
         }

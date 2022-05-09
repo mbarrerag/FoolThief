@@ -2,20 +2,20 @@ package com.mycompany.foolthief;
 
 
 public class DynamicArray {
-   int id=0;
-   int u=1;
-         String arrayList[];
+    public int id=0;
+    String arrayList[];
     int sizeofarray=0;
     private int count;
   
     public DynamicArray (){
     arrayList= new String[1];
     count=0;
+    id++;
     sizeofarray=1;
      
     }
      public void addElement(String infDynamic){
-        
+        id++;
         if (count == sizeofarray){
         growSize();      
         }
@@ -44,7 +44,7 @@ public class DynamicArray {
              
        arrayList[i+1]=arrayList[i];
          }
-       //  arrayList[index]= infDynamic;
+       arrayList[index]= infDynamic;
          count++;
      }
      
@@ -57,9 +57,16 @@ public class DynamicArray {
         return resoult;  
     }
      
-    public int Aumnetar(){
-        u++;
-        return u;     
+    
+    public void Eliminar(){
+        
+       for(int i=0; i == id;i++){
+           if (i == id){
+       arrayList[i] ="";
+       count=count-1; 
+       sizeofarray= sizeofarray-1;
+    }
+  }
     }
 }
 

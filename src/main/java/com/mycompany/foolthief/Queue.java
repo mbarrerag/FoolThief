@@ -71,9 +71,9 @@ public class Queue extends List {
 
         String chain[] = infQueue.split("\n ");
         for (int i=chain.length-1; i>=0; i--){
-            inverstQueue += "\n"+chain[i];
+            inverstQueue +=chain[i];
             infQueue = "";
-            Text danger = new Text ("- "+inverstQueue+'\n');
+            Text danger = new Text ("- "+inverstQueue+'\n'+"- ");
             MainInter.addComponent(danger);
         }
     }

@@ -193,6 +193,7 @@ public class MainInter {
 			 		lblNewLabel.setBounds(0, 0, 0, 0);
 			 		frame.setEnabled(false);
 					InsertWin.main(null);
+                                        controller.modificarData();
 			 		
 			 }
 		});
@@ -223,7 +224,8 @@ public class MainInter {
 			frame.revalidate();
 			frame.repaint();
 			lblNewLabel.setBounds(0, 0, 0, 0);
-			}
+			controller.deleteData();
+                        }
 		});
 		  //Highly Stolen Objects
 		highlyStolen = new Button("Highly Stolen Objects");

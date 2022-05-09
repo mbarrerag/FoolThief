@@ -253,6 +253,8 @@ public class InsertWin {
                         
                         
                         MainInter.controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
+                        MainInter.top.setNeighborhood(neightborhoodObj);
+                        MainInter.top.setObject(objectObj);
                         Controller.readStack();
     /*Desde aqui*/	
                         
