@@ -53,22 +53,20 @@ public class Controller {
         
     public static void readStack() {
         Stack auxiliar = new Stack();
-        Attempt element = stack.pop();
         int n = stack.size();
         int counter = 0;
-        while (counter <= n) {
-            // System.out.println(element.getId()); //toma los datos que necesite
+        while (counter < n) {
+            Attempt element = stack.pop();
             MainInter.addLabel(element.getId(), element.getDate(), element.getHour(), element.getNeighborhood(), element.getObject(), element.getModusOperandi());
-            auxiliar.push(element); // Inserta en la nueva pila
+            auxiliar.push(element);
             counter++;
+            
         }
-        // Rellena la pila principal
         if (counter == auxiliar.size()) {
             while (counter > 0) {
                 stack.push(auxiliar.pop());
                 counter--;
             }
-
         }
     }
 }

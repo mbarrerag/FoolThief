@@ -47,6 +47,7 @@ public class MainInter {
 	private JLabel paneBorder;
 	private JLabel icon;
 	public static JTextArea lblNewLabel;
+        public static JTextArea text;
 	public static JLabel label;
 	private JScrollPane scrollRecent;
 	private Button insert;
@@ -240,7 +241,7 @@ public class MainInter {
 	}
 	
 	public static void addLabel(String id, String date, String hour, String neighbornhood, String object,String modus) {
-		JTextArea text = new JTextArea("    Id:       " + id +  "       Date:     " + date + "      Hour:   "+ hour+ '\n'+'\n'+ "     Neighbornhood:     "+  neighbornhood +"     Object:     " + object + "     Modus:     "+modus);
+                text = new JTextArea("    Id:       " + id +  "       Date:     " + date + "      Hour:   "+ hour+ '\n'+'\n'+ "     Neighbornhood:     "+  neighbornhood +"     Object:     " + object + "     Modus:     "+modus);
 		Point location = lblNewLabel.getLocation();
 		text.setBounds(location.x+28, location.y+35, 769, 134);
 		text.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
@@ -252,6 +253,7 @@ public class MainInter {
 		frame.revalidate();
 		frame.repaint();
 	}
+        
 	public static void enableFrame() {
 		frame.setEnabled(true);
 	}
