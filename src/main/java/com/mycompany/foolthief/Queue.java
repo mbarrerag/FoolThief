@@ -8,12 +8,14 @@ import GUI.Text;
 
 public class Queue extends List {
     String infQueue = "";
-    
     Queue (){
         super();
     }
 
     public void makeEmpty() {
+        /**
+         * Permite vaciar la cola.
+         */
         if (!isEmpty()){
             head =  null;
             tail=null;
@@ -21,6 +23,9 @@ public class Queue extends List {
     }
 
     public boolean isEmpty() {
+        /**
+         * Permite conocer si la cola esta vacia.
+         */
         if (head==null){
             return true;
         } else {
@@ -62,6 +67,9 @@ public class Queue extends List {
     }
     
      public void showInformation() {
+         /**
+          * Permite saber la informacion que esta  contenida en la cola.
+          */
         Node journeyStack =  head;
         String inverstQueue = "";
         while (journeyStack != null ) {
@@ -73,7 +81,7 @@ public class Queue extends List {
         for (int i=chain.length-1; i>=0; i--){
             inverstQueue +=chain[i];
             infQueue = "";
-            Text danger = new Text ("- "+inverstQueue+'\n'+"- ");
+            Text danger = new Text ("-TOP\n"+inverstQueue+'\n'+"- ");
             MainInter.addComponent(danger);
         }
     }

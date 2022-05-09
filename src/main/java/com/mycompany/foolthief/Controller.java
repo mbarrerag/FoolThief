@@ -47,7 +47,7 @@ public class Controller {
         u++;
         w = "F"+id;
         array.addElement(w);
-         return w;
+        return w;
     }
         
     public static void readStack() {
@@ -62,11 +62,9 @@ public class Controller {
     public void deleteData(){
         list.removeLast();
         array.Eliminar();
-   
         id--;
-
-         
     }
+    
     public void modificarData(){
         deleteData();
     }

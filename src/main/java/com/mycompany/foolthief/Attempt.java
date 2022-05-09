@@ -2,6 +2,7 @@ package com.mycompany.foolthief;
 
 
 public class Attempt {
+    
     private String id;
     private String neighborhood;
     private String object;

@@ -2,6 +2,9 @@ package com.mycompany.foolthief;
 
 
 public class Stolen {
+    /**
+     * Clase que permite ingresar los atributos a la listadoblemente enlazada
+     */
     private String id;
     private String name;
     private String date;

@@ -2,6 +2,7 @@ package com.mycompany.foolthief;
 
 
 public class Tops {
+    
     Queue queue = new Queue();
     private String neighborhood;
     private String object;
@@ -69,7 +70,6 @@ public class Tops {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    
                     String temp2 = auxiliar[j];
                     auxiliar[j] = auxiliar[j + 1];
                     auxiliar[j + 1] = temp2;

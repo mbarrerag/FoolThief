@@ -143,7 +143,7 @@ public class InsertWin {
 		  //Hours
 		hourL = new Label(" & hour the object was stolen");
 		hourL.setBounds(510, 150, 460, 26);
-	    frame.getContentPane().add(hourL);
+	        frame.getContentPane().add(hourL);
 		  //Place Description
 		placeDescriptionL = new Label("-Write a breeve description of the place where the object was stolen");
 		placeDescriptionL.setBounds(46, 220, 924, 26);
@@ -256,9 +256,7 @@ public class InsertWin {
                         MainInter.top.setNeighborhood(neightborhoodObj);
                         MainInter.top.setObject(objectObj);
                         Controller.readStack();
-    /*Desde aqui*/	
-                        
-                        MainInter.enableFrame();
+    	                MainInter.enableFrame();
 				frame.setVisible(false);
                         }
 		});
