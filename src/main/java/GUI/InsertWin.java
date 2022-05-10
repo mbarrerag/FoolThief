@@ -1,6 +1,7 @@
 package GUI;
 
 import com.mycompany.foolthief.Controller;
+import com.mycompany.foolthief.FoolThief;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -31,6 +32,8 @@ import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JTextField;
 
@@ -240,7 +243,13 @@ public class InsertWin {
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+			        FoolThief fool = new FoolThief();
+                            try {
+                                fool.loadData();
+                            } catch (IOException ex) {
+                                Logger.getLogger(InsertWin.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                
                         String nameObj = fullName.getText();
                         String dateObj = date.getText();
                         String hourObj = hour.getText();

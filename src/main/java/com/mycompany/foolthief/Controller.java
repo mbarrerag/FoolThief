@@ -11,7 +11,7 @@ public class Controller {
     Queue queue;
     DynamicArray array;
     int u = 0;
-    String w = "";
+    String idFl = "";
     public static int id = 0;
     String v = "";
     /**
@@ -36,7 +36,7 @@ public class Controller {
       */
     public void insertData(String name, String date, String hour, String object, String place, String neightborhood, String description, String modusOperandi) {
         counterId();
-        Stolen stolen = new Stolen(w);
+        Stolen stolen = new Stolen(idFl);
         stolen.setName(name);
         stolen.setDate(date);
         stolen.setHour(hour);
@@ -53,7 +53,7 @@ public class Controller {
         attempt.setNeighborhood(neightborhood);
         attempt.setModusOperandi(modusOperandi);
         attempt.setObject(object);
-        attempt.setId(w);
+        attempt.setId(idFl);
         stack.push(attempt);
         id++;
     }
@@ -63,9 +63,9 @@ public class Controller {
          */
     public String counterId(){
         u++;
-        w = "FL#"+id;
-        array.addElement(w);
-        return w;
+        idFl = "FL#"+id;
+        array.addElement(idFl);
+        return idFl;
     }
         /**
          * 

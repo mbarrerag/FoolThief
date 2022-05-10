@@ -1,6 +1,7 @@
 package GUI;
 
 import com.mycompany.foolthief.Controller;
+import com.mycompany.foolthief.FoolThief;
 import com.mycompany.foolthief.Queue;
 import com.mycompany.foolthief.Tops;
 
@@ -39,6 +40,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 public class MainInter {
@@ -67,18 +73,51 @@ public class MainInter {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+                  
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					MainInter window = new MainInter();
 					window.frame.setVisible(true);
+                                        
+                                        
+                                       
+                                        Controller controller = new Controller();
+        File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\DatosDePrueba.txt");
+
+        BufferedReader obj = new BufferedReader(new FileReader(doc));
+        String strng;
+        String[] lineas = new String[1000];
+
+        for (int i = 0; i < 101; i++) {
+            strng = obj.readLine();
+            if (strng == null) {
+                break;
+            }
+            lineas[i] = strng;
+        }
+        for (int c = 0; c < 100; c++) {
+            String newName = lineas[c];
+            String newDate = lineas[c];
+            String newHour = lineas[c];
+            String newObject = lineas[c];
+            String newPlaces = lineas[c];
+            String newNeightborhood = lineas[c];
+            String newDescripcion = lineas[c];
+            String newModusOperandi = lineas[c];
+            controller.insertData(newName, newDate, newHour, newObject, newPlaces, newNeightborhood, newDescripcion, newModusOperandi);
+        }
+                                        ///
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-	}
+	  
+                  
+                  
+        }
 
 	/**
 	 * Create the application.
@@ -86,7 +125,15 @@ public class MainInter {
 	 */
 	public MainInter() throws IOException {
 		initialize();
-		
+		Controller.readStack();
+                MainInter.frame.revalidate();
+                MainInter.frame.repaint();
+                FoolThief fool = new FoolThief();
+                            try {
+                                fool.loadData();
+                            } catch (IOException ex) {
+                                Logger.getLogger(InsertWin.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 	}
 
 	/**
