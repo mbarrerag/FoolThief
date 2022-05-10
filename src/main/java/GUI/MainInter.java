@@ -151,7 +151,7 @@ public class MainInter {
 		panel = new JPanel();
 		panel.setBounds(32, 95, 777, 567);
 		panel.setLayout(null);
-		panel.setPreferredSize(new Dimension(1100, 6000));
+		panel.setPreferredSize(new Dimension(2100, 20000));
 		panel.setBackground(Color.decode("#ffffff"));
 		scrollRecent.setViewportView(panel);
 		
@@ -206,11 +206,13 @@ public class MainInter {
 		viewMore.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		viewMore.setBounds(845, 378, 387, 47);
 		frame.getContentPane().add(viewMore);
+                viewMore.setVisible(false);
 		viewMore.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				panel.setVisible(true);
 				panelS.setVisible(false);
+                                viewMore.setVisible(false);
 				scrollRecent.setViewportView(panel);
 				frame.revalidate();
 				frame.repaint();
@@ -241,7 +243,9 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
-				MainInter.top.countTopObjects();
+				panelS.removeAll();
+                                MainInter.top.countTopObjects();
+                                viewMore.setVisible(true);
 				panel.setVisible(false);
 				panelS.setVisible(true);
 				frame.revalidate();
@@ -259,7 +263,9 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
+                                panelS.removeAll();
                                MainInter.top.countTopNeighborhoods();
+                               viewMore.setVisible(true);
 				panel.setVisible(false);
 				panelS.setVisible(true);
 				frame.revalidate();
@@ -280,7 +286,7 @@ public class MainInter {
 	public static void addLabel(String id, String date, String hour, String neighbornhood, String object,String modus) {
 		JTextArea text = new JTextArea("    Id:       " + id +  "       Date:     " + date + "      Hour:   "+ hour+ '\n'+'\n'+ "     Neighbornhood:     "+  neighbornhood +"     Object:     " + object + "     Modus:     "+modus);
 		Point location = lblNewLabel.getLocation();
-		text.setBounds(location.x+28, location.y+35, 769, 134);
+		text.setBounds(location.x+28, location.y+35, 2000, 134);
 		text.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		text.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		text.setEditable(false);

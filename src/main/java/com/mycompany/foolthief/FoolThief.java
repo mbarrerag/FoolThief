@@ -20,7 +20,7 @@ public class FoolThief {
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-       loadData ();
+   
 
 
     }
@@ -35,7 +35,7 @@ public class FoolThief {
            
            try{
             
-       File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\DatosDePrueba.txt");
+       File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\Nueva carpeta\\DatosDePrueba.txt");
 
           BufferedReader obj = new BufferedReader(new FileReader(doc));
             String temp = "";
@@ -48,12 +48,12 @@ public class FoolThief {
             texto = temp;
             System.out.println(texto);
         }catch(Exception e){ 
-            System.err.println("No se encontro archivo");
+            
         }
         
         
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 800; i++) {
           lineas  = texto.split(",");
             if (lineas == null) {
                 break;
@@ -61,7 +61,7 @@ public class FoolThief {
             }
             
             
-        }System.out.println(lineas[10]);
+        }
  
       
         
@@ -115,14 +115,29 @@ public class FoolThief {
        }
        
        w++;
+       y++;
        for (int c = w; c < y; c++) {
        newModusOperandi = lineas[c];
+          
    
        
        }
+     
+  
+     
+         System.out.println(w+"w"+y+"c");
+     
+       
+       
+         
       
-         System.out.println("y"+y+"W"+w);
+     
+      
+        
        MainInter.controller.insertData(newName, newDate, newHour, newObject, newPlaces, newNeightborhood, newDescripcion, newModusOperandi);
+       MainInter.top.setNeighborhood(newNeightborhood);
+       MainInter.top.setObject(newObject);
+       MainInter.top.countInTop();
        Controller.readStack();
        u++; 
      }
