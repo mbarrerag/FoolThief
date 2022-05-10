@@ -115,18 +115,17 @@ public class FoolThief {
        }
        
        w++;
-       y++;
+        y++;
        for (int c = w; c < y; c++) {
        newModusOperandi = lineas[c];
           
-   
+      
        
        }
      
   
      
-         System.out.println(w+"w"+y+"c");
-     
+         
        
        
          
