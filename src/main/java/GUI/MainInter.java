@@ -259,7 +259,7 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
-                               MainInter.top.topNeighborhoods();
+                               MainInter.top.countTopNeighborhoods();
 				panel.setVisible(false);
 				panelS.setVisible(true);
 				frame.revalidate();

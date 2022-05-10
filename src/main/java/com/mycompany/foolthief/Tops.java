@@ -2,7 +2,6 @@ package com.mycompany.foolthief;
 
 
 public class Tops {
-    
     Queue queue = new Queue();
     private String neighborhood;
     private String object;
@@ -46,6 +45,9 @@ public class Tops {
         this.object = object;
     }
     
+    /**
+     * Genera un conteo por localidad y objeto el número de reportes en una lista.
+     */
     public void countInTop() {
         switch (neighborhood) {
             case "Usaquen" -> topNeighborhoods[0]++;
@@ -80,6 +82,9 @@ public class Tops {
         }
     }
     
+    /**
+     * Ordena el número de robos por localidad y de la misma forma el arreglo auxiliar que los relaciona.
+     */
     private void orderNeighborhoods() {
         // Bubble Sort
         int n = nCounter.length;
@@ -99,7 +104,11 @@ public class Tops {
         }
     }
     
-    public void topNeighborhoods() {
+    /**
+     * Este método se encarga de verificar si el arreglo de número de robos esta 
+     * ordenado y encola el nombre de las localidades donde hubieron más robos.
+     */
+    public void countTopNeighborhoods() {
         nCounter = topNeighborhoods;
         nAuxiliar = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
         if (isOrdered(nCounter) == false) {
@@ -115,6 +124,9 @@ public class Tops {
         } 
     }
     
+    /**
+     * Ordena el número de objetos robados y de la misma forma el arreglo auxiliar que los relaciona.
+     */
     private void orderObjects() {
         // Bubble Sort
         int n = objCounter.length;
@@ -134,6 +146,10 @@ public class Tops {
         }
     }
     
+    /**
+    * Este método se encarga de verificar si el arreglo de número de objetos robados 
+    * esta ordenada y encola el nombre de las objetos que han sido más robados.
+    */
     public void countTopObjects() {
         objCounter = topObjects;
         objAuxiliar = new String[]{"0", "1", "2", "3", "4", "5", "6"};
@@ -153,6 +169,14 @@ public class Tops {
         }
     }
     
+    /**
+     * Verifica si una lista esta ordenada.
+     * @param array: arreglo a verificar
+     * @return boolean: <ul>
+     *                      <li>true: el arreglo está ordenado</li>
+     *                      <li>false: el arreglo no está ordenado</li>
+     *                  </ul>
+     */
     private boolean isOrdered(int[] array) {
         for (int i=0; i<array.length-1; i++) {
             if (array[i] > array[i + 1]) {

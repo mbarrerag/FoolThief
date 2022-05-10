@@ -16,6 +16,7 @@ public class FoolThief {
     public static int d = 8;
     public static int w =0;
     public static int y=0; 
+    public static String texto = "";
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
@@ -23,24 +24,46 @@ public class FoolThief {
 
 
     }
-    public static void loadData () throws FileNotFoundException, IOException{
-           
+    public String leerTxt(){ //direccion del archivo
         
-        File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\DatosDePrueba.txt");
+     
+        
+        try{
+            
+       File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\DatosDePrueba.txt");
 
         BufferedReader obj = new BufferedReader(new FileReader(doc));
-               
-       
+            String temp = "";
+            String bfRead;
+            while((bfRead = obj.readLine()) != null){ 
+                //haz el ciclo, mientras bfRead tiene datos
+                temp = temp + bfRead; //guardado el texto del archivo
+            }
+            
+            texto = temp;
+            System.out.println(texto);
+        }catch(Exception e){ 
+            System.err.println("No se encontro archivo");
+        }
+        
+        return texto;
+        
+    }
 
-        for (int i = 0; i < 50; i++) {
-          lineas  = obj.readLine().split(",");
+    public static void loadData () throws FileNotFoundException, IOException{
+           
+       leerText();
+        
+
+        for (int i = 0; i < 16; i++) {
+          lineas  = texto.split(",");
             if (lineas == null) {
                 break;
               
             }
             
             
-        }System.out.println(lineas[8]);
+        }System.out.println(lineas[10]);
  
         /**
          *  int u=0; 
