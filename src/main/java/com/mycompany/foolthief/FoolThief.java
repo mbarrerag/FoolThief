@@ -24,15 +24,20 @@ public class FoolThief {
 
 
     }
-    public String leerTxt(){ //direccion del archivo
+  
         
      
         
-        try{
+    
+    
+
+    public static void loadData () throws FileNotFoundException, IOException{
+           
+           try{
             
        File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\DatosDePrueba.txt");
 
-        BufferedReader obj = new BufferedReader(new FileReader(doc));
+          BufferedReader obj = new BufferedReader(new FileReader(doc));
             String temp = "";
             String bfRead;
             while((bfRead = obj.readLine()) != null){ 
@@ -46,16 +51,9 @@ public class FoolThief {
             System.err.println("No se encontro archivo");
         }
         
-        return texto;
-        
-    }
-
-    public static void loadData () throws FileNotFoundException, IOException{
-           
-       leerText();
         
 
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 12; i++) {
           lineas  = texto.split(",");
             if (lineas == null) {
                 break;
@@ -65,28 +63,23 @@ public class FoolThief {
             
         }System.out.println(lineas[10]);
  
-        /**
-         *  int u=0; 
-           int d = 8;
-           int w =0;
-           int y=0;
-         */
+      
         
           
-     for(int i=0;i<2;i++){  
+     for(int i=0;i<100;i++){  
             
       y++;
          
        for (int c = w; c < y; c++) {
              newName = lineas[c];
-             System.out.println("w");
+           
           
        }
        y++;
        w++;
         for (int c = w; c < y; c++) {
             newDate = lineas[c];
-        System.out.println("2");
+      
  
 
         }
@@ -94,37 +87,37 @@ public class FoolThief {
        w++;
         for (int c = w; c < y; c++) {
             newHour = lineas[c];
-            System.out.println("3"); System.out.println("z");
+       
         }
          y++;
        w++;
       for (int c = w; c < y; c++) {
              newObject = lineas[c];
-             System.out.println("4");
+         
        }
        y++;
        w++;
        for (int c = w; c <y; c++) { 
         newPlaces = lineas[c];
-       System.out.println("5");
+  
        }
         y++;
        w++;
        for (int c = w; c < y; c++) {
        newNeightborhood = lineas[c];
-       System.out.println("6");
+     
        }
         y++;
        w++;
        for (int c = w; c < y; c++) { 
        newDescripcion = lineas[c];
-       System.out.println("7");
+    
        }
        
        w++;
        for (int c = w; c < y; c++) {
        newModusOperandi = lineas[c];
-       System.out.println("8");
+   
        
        }
       
