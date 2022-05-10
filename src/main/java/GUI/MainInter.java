@@ -75,7 +75,7 @@ public class MainInter {
 				try {
 					MainInter window = new MainInter();
 					window.frame.setVisible(true);
-                                        fool.loadData();
+                                        //fool.loadData();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
