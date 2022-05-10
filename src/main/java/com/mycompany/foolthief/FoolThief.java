@@ -41,8 +41,8 @@ public class FoolThief {
             String temp = "";
             String bfRead;
             while((bfRead = obj.readLine()) != null){ 
-                //haz el ciclo, mientras bfRead tiene datos
-                temp = temp + bfRead; //guardado el texto del archivo
+             
+                temp = temp + bfRead; 
             }
             
             texto = temp;
