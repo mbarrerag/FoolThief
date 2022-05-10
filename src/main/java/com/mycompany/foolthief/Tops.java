@@ -6,15 +6,28 @@ public class Tops {
     Queue queue = new Queue();
     private String neighborhood;
     private String object;
-    public int[] topObjects = new int[6];
-    public int[] topPlaces= new int[20];
+    
+    private int[] topNeighborhoods;
+    private int[] topObjects;
+    
+    private String[] nArray;
+    private String[] objArray;
+    
+    private String[] nAuxiliar;
+    private String[] objAuxiliar;
+    
+    private int[] nCounter;
+    private int[] objCounter;
+    
+    private String state;
 
-    public void setTopObjects(int[] topObjects) {
-        this.topObjects = topObjects;
-    }
-
-    public void setTopPlaces(int[] topPlaces) {
-        this.topPlaces = topPlaces;
+    public Tops() {
+        this.nArray = new String[]{"Usaquen", "Chapinero", "Santa Fe", "San Cristobal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibon", "Engativa", "Suba", "Barrios Unidos", "Teusaquillo", "Los Martires", "Antonio Nariño", "Puente Aranda", "La Candelaria", "Rafael Uribe Uribe", "Ciudad Bolivar", "Sumapaz"};
+        this.objArray = new String[]{"Billetera", "Celular", "Bolso", "Bicicleta", "Vehiculo", "Computador", "Papeles"};
+        this.topNeighborhoods = new int[nArray.length];
+        this.topObjects = new int[objArray.length];
+        nAuxiliar = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
+        objAuxiliar = new String[]{"0", "1", "2", "3", "4", "5", "6"};
     }
 
     public String getNeighborhood() {
@@ -32,97 +45,120 @@ public class Tops {
     public void setObject(String object) {
         this.object = object;
     }
-
-    public void topPlaces() {
+    
+    public void countInTop() {
         switch (neighborhood) {
-            case "Usme" -> topPlaces[0]++;
-            case "Chapinares" -> topPlaces[1]++ ;
-            case "Santa Fe" -> topPlaces[2]++;
-            case "San Cristobal" -> topPlaces[3]++ ;
-            case "Tunjuelito" -> topPlaces[4]++;
-            case "Bosa" -> topPlaces[5]++ ;
-            case "Kennedy" -> topPlaces[6]++;
-            case "Fontibon" -> topPlaces[7]++ ;
-            case "Engativa" -> topPlaces[8]++;
-            case "Suba" -> topPlaces[9]++ ;
-            case "Barrios Unidos" -> topPlaces[10]++;
-            case "Teusaquillo" -> topPlaces[11]++ ;
-            case "Los Martires" -> topPlaces[12]++;
-            case "Antonio Nariño" -> topPlaces[13]++ ;
-            case "Puente Aranda" -> topPlaces[14]++;
-            case "La Candelaria" -> topPlaces[15]++ ;
-            case "Rafael Uribe Uribe" -> topPlaces[16]++;
-            case "Cuidad Bolivar" -> topPlaces[17]++;
-            case "SumaPaz" -> topPlaces[18]++;
-            case "Usaquen" -> topPlaces[19]++;
+            case "Usaquen" -> topNeighborhoods[0]++;
+            case "Chapinero" -> topNeighborhoods[1]++;
+            case "Santa Fe" -> topNeighborhoods[2]++;
+            case "San Cristobal" -> topNeighborhoods[3]++;
+            case "Usme" -> topNeighborhoods[4]++;
+            case "Tunjuelito" -> topNeighborhoods[5]++;
+            case "Bosa" -> topNeighborhoods[6]++;
+            case "Kennedy" -> topNeighborhoods[7]++;
+            case "Fontibon" -> topNeighborhoods[8]++;
+            case "Engativa" -> topNeighborhoods[9]++;
+            case "Suba" -> topNeighborhoods[10]++;
+            case "Barrios Unidos" -> topNeighborhoods[11]++;
+            case "Teusaquillo" -> topNeighborhoods[12]++;
+            case "Los Martires" -> topNeighborhoods[13]++;
+            case "Antonio Nariño" -> topNeighborhoods[14]++;
+            case "Puente Aranda" -> topNeighborhoods[15]++;
+            case "La Candelaria" -> topNeighborhoods[16]++;
+            case "Rafael Uribe Uribe" -> topNeighborhoods[17]++;
+            case "Ciudad Bolivar" -> topNeighborhoods[18]++;
+            case "Sumapaz" -> topNeighborhoods[19]++;
+        }
+        switch (object) {
+            case "Billetera" -> topObjects[0]++;
+            case "Celular" -> topObjects[1]++;
+            case "Bolso" -> topObjects[2]++;
+            case "Bicicleta" -> topObjects[3]++;
+            case "Vehiculo" -> topObjects[4]++;
+            case "Computador" -> topObjects[5]++;
+            case "Papeles" -> topObjects[6]++;
         }
     }
     
-    public void countTopPlaces() {
-        queue.makeEmpty();
-        String[] ObjArray = {"Usme","Chapinero","Santa Fe","San Cristobal","Tunjuelito","Bosa","Kennedy","Fontibon","Engativa","Suba","Barrios Unidos","Teusaquillo","Los Martires","Antonio Nariño","Puente Aranda","La Calera","Rafael Uribe","Cuidad Bolivar","Sumapaz","Usaquen"};
-        String[] auxiliar = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
-        int[] arr = topPlaces;
-        int n = arr.length;
+    private void orderNeighborhoods() {
+        // Bubble Sort
+        int n = nCounter.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    String temp2 = auxiliar[j];
-                    auxiliar[j] = auxiliar[j + 1];
-                    auxiliar[j + 1] = temp2;
+                if (nCounter[j] > nCounter[j + 1]) {
+                    int temp = nCounter[j];
+                    nCounter[j] = nCounter[j + 1];
+                    nCounter[j + 1] = temp;
+                    // A continuación también organiza el array auxiliar para 
+                    // conocer a que localidad correponde el número de robos organizado
+                    String temp2 = nAuxiliar[j];
+                    nAuxiliar[j] = nAuxiliar[j + 1];
+                    nAuxiliar[j + 1] = temp2;
                 }
             }
         }
-        for (int i=19; i>13; i--) {
-            int index = Integer.parseInt(auxiliar[i]);
-            queue.enqueue(ObjArray[index]);
-        }
-        queue.showInformation();
     }
     
-    public void topObjects() {
-        switch (object) {
-            case "Carro" : topObjects[0]++;
-            break;
-            case "Moto" : topObjects[1]++ ;
-            break;
-            case "Bolso" :  topObjects[2]++;
-            break;
-            case "Celular" : topObjects[3]++ ;
-            break;
-            case "Computador" :  topObjects[4]++;
-            break;
-            case "Bicicleta" : topObjects[5]++ ;
-            break;
+    public void topNeighborhoods() {
+        nCounter = topNeighborhoods;
+        nAuxiliar = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
+        if (isOrdered(nCounter) == false) {
+            // Vacia y rellena de nuevo la cola
+            queue.makeEmpty();
+            orderNeighborhoods(); // Organiza el arreglo nArray -> cantidad de robos
+            int n = nArray.length;
+            for (int i=n-1; i>n-7; i--) {
+                int index = Integer.parseInt(nAuxiliar[i]);
+                queue.enqueue(nArray[index]); // Inserta de acuerdo al número indice tambien organizado en la función orderNeighborhoods
+            }
+            queue.showInformation();   
+        } 
+    }
+    
+    private void orderObjects() {
+        // Bubble Sort
+        int n = objCounter.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (objCounter[j] > objCounter[j + 1]) {
+                    int temp = objCounter[j];
+                    objCounter[j] = objCounter[j + 1];
+                    objCounter[j + 1] = temp;
+                    // A continuación también organiza el array auxiliar para 
+                    // conocer a que localidad correponde el número de objets robados organizado
+                    String temp2 = objAuxiliar[j];
+                    objAuxiliar[j] = objAuxiliar[j + 1];
+                    objAuxiliar[j + 1] = temp2;
+                }
+            }
         }
     }
     
     public void countTopObjects() {
-        queue.makeEmpty();
-        String[] ObjArray = {"Carro", "Moto", "Bolso", "Celular", "Computador", "Bicicleta"};
-        String[] auxiliar = {"0", "1", "2", "3", "4", "5"};
-        int[] arr = topObjects;
-        int n = topObjects.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    
-                    String temp2 = auxiliar[j];
-                    auxiliar[j] = auxiliar[j + 1];
-                    auxiliar[j + 1] = temp2;
-                }
+        objCounter = topObjects;
+        objAuxiliar = new String[]{"0", "1", "2", "3", "4", "5", "6"};
+        for (int i=0; i<objArray.length; i++) {
+            objAuxiliar[i] = String.valueOf(i);
+        }
+        if (isOrdered(objCounter) == false) {
+            // Vacia y rellena de nuevo la cola
+            queue.makeEmpty();
+            orderObjects();
+            int n = objArray.length;
+            for (int i=n-1; i>n-7; i--) {
+                int index = Integer.parseInt(objAuxiliar[i]);
+                queue.enqueue(objArray[index]); // Inserta de acuerdo al número indice tambien organizado en la función orderNeighborhoods
+            }
+            queue.showInformation();  
+        }
+    }
+    
+    private boolean isOrdered(int[] array) {
+        for (int i=0; i<array.length-1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
             }
         }
-        for (int i=0; i>6; i--) {
-            int index = Integer.parseInt(auxiliar[i]);
-            queue.enqueue(ObjArray[index]);
-        }
-        queue.showInformation();
+        return true;
     }
 }

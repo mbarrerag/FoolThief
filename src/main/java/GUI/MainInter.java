@@ -40,11 +40,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 public class MainInter {
@@ -70,54 +65,23 @@ public class MainInter {
         // Clase que contiene todas las estructuras
         public static Controller controller = new Controller(); 
         public static Tops top = new Tops();
+        public static FoolThief fool = new FoolThief();
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) throws IOException {
-                  
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					MainInter window = new MainInter();
 					window.frame.setVisible(true);
-                                        
-                                        
-                                       
-                                        Controller controller = new Controller();
-        File doc = new File("C:\\Users\\Stepe\\Downloads\\datospruebas\\DatosDePrueba.txt");
-
-        BufferedReader obj = new BufferedReader(new FileReader(doc));
-        String strng;
-        String[] lineas = new String[1000];
-
-        for (int i = 0; i < 101; i++) {
-            strng = obj.readLine();
-            if (strng == null) {
-                break;
-            }
-            lineas[i] = strng;
-        }
-        for (int c = 0; c < 100; c++) {
-            String newName = lineas[c];
-            String newDate = lineas[c];
-            String newHour = lineas[c];
-            String newObject = lineas[c];
-            String newPlaces = lineas[c];
-            String newNeightborhood = lineas[c];
-            String newDescripcion = lineas[c];
-            String newModusOperandi = lineas[c];
-            controller.insertData(newName, newDate, newHour, newObject, newPlaces, newNeightborhood, newDescripcion, newModusOperandi);
-        }
-                                        ///
+                                        fool.loadData();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-	  
-                  
-                  
-        }
+	}
 
 	/**
 	 * Create the application.
@@ -125,15 +89,8 @@ public class MainInter {
 	 */
 	public MainInter() throws IOException {
 		initialize();
-		Controller.readStack();
-                MainInter.frame.revalidate();
-                MainInter.frame.repaint();
-                FoolThief fool = new FoolThief();
-                            try {
-                                fool.loadData();
-                            } catch (IOException ex) {
-                                Logger.getLogger(InsertWin.class.getName()).log(Level.SEVERE, null, ex);
-                            }
+               
+		
 	}
 
 	/**
@@ -194,7 +151,7 @@ public class MainInter {
 		panel = new JPanel();
 		panel.setBounds(32, 95, 777, 567);
 		panel.setLayout(null);
-		panel.setPreferredSize(new Dimension(850, 6000));
+		panel.setPreferredSize(new Dimension(1100, 6000));
 		panel.setBackground(Color.decode("#ffffff"));
 		scrollRecent.setViewportView(panel);
 		
@@ -284,7 +241,6 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
-				MainInter.top.topObjects();
 				MainInter.top.countTopObjects();
 				panel.setVisible(false);
 				panelS.setVisible(true);
@@ -303,8 +259,7 @@ public class MainInter {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				scrollRecent.setViewportView(panelS);
-                MainInter.top.topPlaces();
-                MainInter.top.countTopPlaces();
+                               MainInter.top.topNeighborhoods();
 				panel.setVisible(false);
 				panelS.setVisible(true);
 				frame.revalidate();

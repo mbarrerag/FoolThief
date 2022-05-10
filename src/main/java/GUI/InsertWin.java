@@ -244,11 +244,7 @@ public class InsertWin {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			        FoolThief fool = new FoolThief();
-                            try {
-                                fool.loadData();
-                            } catch (IOException ex) {
-                                Logger.getLogger(InsertWin.class.getName()).log(Level.SEVERE, null, ex);
-                            }
+                          
                 
                         String nameObj = fullName.getText();
                         String dateObj = date.getText();
@@ -264,6 +260,7 @@ public class InsertWin {
                         MainInter.controller.insertData(nameObj, dateObj, hourObj, objectObj, placeObj, neightborhoodObj, descriptionObj ,modusoperandiObj);
                         MainInter.top.setNeighborhood(neightborhoodObj);
                         MainInter.top.setObject(objectObj);
+                        MainInter.top.countInTop();
                         Controller.readStack();
     	                MainInter.enableFrame();
 				frame.setVisible(false);
