@@ -1,7 +1,9 @@
 # FoolThief
 
 
-![Screenshot 2023-08-03 232143](https://github.com/mbarrerag/FoolThief/assets/101472701/3ffee6f0-8d2a-479d-a6db-73a6416a4603)
+![Screenshot 2023-08-03 232143](https://github.com/mbarrerag/FoolThief/assets/101472701/036653f7-20ce-45c9-8837-f7d142a59e8d)
+![Screenshot 2023-08-03 232223](https://github.com/mbarrerag/FoolThief/assets/101472701/b294ed88-5dbe-43e8-844a-c0c13ea082d5)
+
 
 
 This project is a programming implementation that focuses on creating a system to analyze and provide timely information to citizens about theft incidents in Colombia, specifically in Bogotá. 
