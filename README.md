@@ -1,5 +1,9 @@
 # FoolThief
 
+
+![Screenshot 2023-08-03 232143](https://github.com/mbarrerag/FoolThief/assets/101472701/3ffee6f0-8d2a-479d-a6db-73a6416a4603)
+
+
 This project is a programming implementation that focuses on creating a system to analyze and provide timely information to citizens about theft incidents in Colombia, specifically in Bogotá. 
 The program aims to assist users in making informed decisions regarding their routes and locations to minimize the risk of being victims of theft. 
 The system utilizes various data structures and algorithms, along with a set of custom Java classes, to store and process the relevant information.
